@@ -128,8 +128,8 @@
                 transform: rotateX(0deg) translateZ(0);
             }
         }
-        
-        /* Sticky Bar CTA - now inside header */
+
+        /* Sticky Bar CTA */
         .sticky-bar {
             position: fixed;
             bottom: 0;
@@ -177,7 +177,7 @@
         .section {
             background: linear-gradient(120deg, #fff, #e1eaf7 90%);
             border-radius: 22px;
-            box-shadow: 0 6px 38px 0px rgba(83, 103, 153, 0.1), 0 0 0 #fff;
+            box-shadow: 0 6px 38px 0 rgba(83, 103, 153, 0.1), 0 0 0 #fff;
             margin: 48px 0 36px;
             padding: 38px 32px 32px;
             display: flex;
@@ -383,7 +383,8 @@
         }
 
         @media (max-width: 800px) {
-            header > .header-top, .footer-inner {
+            header > .header-top,
+            .footer-inner {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
@@ -435,6 +436,13 @@
     </style>
 </head>
 <body>
+
+    <!-- Sticky CTA Bar (moved above header) -->
+    <div class="sticky-bar" role="banner" aria-label="Call to action">
+        <span>Serving Lower Assam & Bongaigaon for 15+ Years – Transform your Interiors with Quality & Trust!</span>
+        <button onclick="window.location.href='tel:+919876543210'" aria-label="Call now for free consultation">Call Now for Free Consultation</button>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="header-top">
@@ -449,15 +457,10 @@
                 </div>
             </div>
         </div>
-
-        <!-- Sticky CTA Bar (inside header now) -->
-        <div class="sticky-bar">
-            <span>Serving Lower Assam & Bongaigaon for 15+ Years – Transform your Interiors with Quality & Trust!</span>
-            <button onclick="window.location.href='tel:+919876543210'">Call Now for Free Consultation</button>
-        </div>
     </header>
 
     <main class="container">
+
         <!-- UPVC Windows & Doors -->
         <section class="section" id="upvc-windows-doors">
             <div class="section-gallery" aria-label="UPVC Windows & Doors Photos">
@@ -807,5 +810,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>
