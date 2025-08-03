@@ -13,6 +13,7 @@
             font-family: 'Montserrat', sans-serif;
             background: #f3f6fb;
             color: #222;
+            padding-top: 72px; /* Give space for sticky bar height */
         }
         a {
             color: #2e63a5;
@@ -129,30 +130,29 @@
             }
         }
 
-        /* Sticky Bar CTA */
+        /* Sticky Bar CTA fixed on top */
         .sticky-bar {
             position: fixed;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
-            z-index: 99;
+            z-index: 9999;
             background: linear-gradient(90deg, #022c43 80%, #fed353 120%);
             color: #fff;
             padding: 16px 0;
-            box-shadow: 0 -1px 12px #02182644;
+            box-shadow: 0 2px 12px #02182688;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            animation: slideUp 0.9s cubic-bezier(0.56, -0.09, 0.94, 0.74);
+            /* Initial opacity */
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: auto;
         }
-        @keyframes slideUp {
-            from {
-                transform: translateY(100%);
-            }
-            to {
-                transform: translateY(0%);
-            }
+        .sticky-bar.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
         .sticky-bar button {
             margin-left: 30px;
@@ -437,7 +437,7 @@
 </head>
 <body>
 
-    <!-- Sticky CTA Bar (moved above header) -->
+    <!-- Sticky CTA Bar fixed on top -->
     <div class="sticky-bar" role="banner" aria-label="Call to action">
         <span>Serving Lower Assam & Bongaigaon for 15+ Years – Transform your Interiors with Quality & Trust!</span>
         <button onclick="window.location.href='tel:+919876543210'" aria-label="Call now for free consultation">Call Now for Free Consultation</button>
@@ -461,273 +461,155 @@
 
     <main class="container">
 
+        <!-- (All product sections with 5 photos each, Why Choose Us, Testimonials, Footer as previously detailed) -->
+
         <!-- UPVC Windows & Doors -->
         <section class="section" id="upvc-windows-doors">
             <div class="section-gallery" aria-label="UPVC Windows & Doors Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=UPVC+1" alt="UPVC Window photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=UPVC+2" alt="UPVC Window photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=UPVC+3" alt="UPVC Window photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=UPVC+4" alt="UPVC Window photo 4" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=UPVC+5" alt="UPVC Window photo 5" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=UPVC+1" alt="UPVC Window photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=UPVC+2" alt="UPVC Window photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=UPVC+3" alt="UPVC Window photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=UPVC+4" alt="UPVC Window photo 4" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=UPVC+5" alt="UPVC Window photo 5" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">UPVC Windows & Doors (15 Years Warranty)</div>
-                <div class="section-text">
-                    Premium UPVC windows and doors designed for durability, energy efficiency, and noise reduction. Choose from a variety of designs and finishes. Backed by a 15-year warranty for peace of mind.
-                </div>
+                <div class="section-text">Premium UPVC windows and doors designed for durability, energy efficiency, and noise reduction. Choose from a variety of designs and finishes. Backed by a 15-year warranty for peace of mind.</div>
             </div>
         </section>
 
         <!-- False Ceiling Designs -->
         <section class="section" id="false-ceiling">
             <div class="section-gallery" aria-label="False Ceiling Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Ceiling+1" alt="False Ceiling photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Ceiling+2" alt="False Ceiling photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Ceiling+3" alt="False Ceiling photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Ceiling+4" alt="False Ceiling photo 4" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Ceiling+5" alt="False Ceiling photo 5" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Ceiling+1" alt="False Ceiling photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Ceiling+2" alt="False Ceiling photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Ceiling+3" alt="False Ceiling photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Ceiling+4" alt="False Ceiling photo 4" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Ceiling+5" alt="False Ceiling photo 5" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">False Ceiling Designs</div>
-                <div class="section-text">
-                    Transform your rooms with modern or classical false ceiling designs, tailored for homes & offices. Our solutions include POP, Gypsum, and modular ceilings crafted for elegance and enhanced acoustics.
-                </div>
+                <div class="section-text">Transform your rooms with modern or classical false ceiling designs, tailored for homes & offices. Our solutions include POP, Gypsum, and modular ceilings crafted for elegance and enhanced acoustics.</div>
             </div>
         </section>
 
         <!-- Stainless Steel Grills, Railings, and Doors -->
         <section class="section" id="stainless-steel">
             <div class="section-gallery" aria-label="Stainless Steel Grills Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=SS+1" alt="Stainless Steel Grill photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=SS+2" alt="Stainless Steel Grill photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=SS+3" alt="Stainless Steel Grill photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=SS+4" alt="Stainless Steel Grill photo 4" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=SS+5" alt="Stainless Steel Grill photo 5" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=SS+1" alt="Stainless Steel Grill photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=SS+2" alt="Stainless Steel Grill photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=SS+3" alt="Stainless Steel Grill photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=SS+4" alt="Stainless Steel Grill photo 4" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=SS+5" alt="Stainless Steel Grill photo 5" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">Stainless Steel Grills, Railings, and Doors</div>
-                <div class="section-text">
-                    Secure your space with our high-quality stainless steel grills, railings, and main doors. Customized as per your requirements for both safety and style.
-                </div>
+                <div class="section-text">Secure your space with our high-quality stainless steel grills, railings, and main doors. Customized as per your requirements for both safety and style.</div>
             </div>
         </section>
 
         <!-- Readymade Doors -->
         <section class="section" id="readymade-doors">
             <div class="section-gallery" aria-label="Readymade Doors Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Door+1" alt="Readymade Door photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Door+2" alt="Readymade Door photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Door+3" alt="Readymade Door photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Door+4" alt="Readymade Door photo 4" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Door+5" alt="Readymade Door photo 5" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Door+1" alt="Readymade Door photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Door+2" alt="Readymade Door photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Door+3" alt="Readymade Door photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Door+4" alt="Readymade Door photo 4" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Door+5" alt="Readymade Door photo 5" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">Readymade Doors</div>
-                <div class="section-text">
-                    Choose from a wide range of premium readymade doors: wooden, flush, PVC, or steel. Perfect for quick installations with modern, stylish finishes.
-                </div>
+                <div class="section-text">Choose from a wide range of premium readymade doors: wooden, flush, PVC, or steel. Perfect for quick installations with modern, stylish finishes.</div>
             </div>
         </section>
 
         <!-- Ladders and Machines -->
         <section class="section" id="ladders-machines">
             <div class="section-gallery" aria-label="Ladders and Machineries Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Ladder+1" alt="Ladder photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Ladder+2" alt="Ladder photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Ladder+3" alt="Ladder photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Machine+1" alt="Machinery photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Machine+2" alt="Machinery photo 2" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Ladder+1" alt="Ladder photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Ladder+2" alt="Ladder photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Ladder+3" alt="Ladder photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Machine+1" alt="Machinery photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Machine+2" alt="Machinery photo 2" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">Ladders & Machineries</div>
-                <div class="section-text">
-                    Find aluminum ladders, kitchen tools, household and commercial machineries. Quality, utility and superior safety in every equipment.
-                </div>
+                <div class="section-text">Find aluminum ladders, kitchen tools, household and commercial machineries. Quality, utility and superior safety in every equipment.</div>
             </div>
         </section>
 
         <!-- Toughened Glass -->
         <section class="section" id="toughened-glass">
             <div class="section-gallery" aria-label="Toughened Glass Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Glass+1" alt="Toughened Glass photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Glass+2" alt="Toughened Glass photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Glass+3" alt="Toughened Glass photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Glass+4" alt="Toughened Glass photo 4" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Glass+5" alt="Toughened Glass photo 5" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Glass+1" alt="Toughened Glass photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Glass+2" alt="Toughened Glass photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Glass+3" alt="Toughened Glass photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Glass+4" alt="Toughened Glass photo 4" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Glass+5" alt="Toughened Glass photo 5" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">Toughened Glass</div>
-                <div class="section-text">
-                    Secure & stylish toughened glass solutions: doors, partitions, canopies, and more. Engineered for strength, clarity, and safety.
-                </div>
+                <div class="section-text">Secure & stylish toughened glass solutions: doors, partitions, canopies, and more. Engineered for strength, clarity, and safety.</div>
             </div>
         </section>
 
         <!-- Structural Glazing Glass -->
         <section class="section" id="structural-glazing-glass">
             <div class="section-gallery" aria-label="Structural Glazing Glass Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Struct+Glass+1" alt="Structural Glazing Glass photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Struct+Glass+2" alt="Structural Glazing Glass photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Struct+Glass+3" alt="Structural Glazing Glass photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Struct+Glass+4" alt="Structural Glazing Glass photo 4" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Struct+Glass+5" alt="Structural Glazing Glass photo 5" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Struct+Glass+1" alt="Structural Glazing Glass photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Struct+Glass+2" alt="Structural Glazing Glass photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Struct+Glass+3" alt="Structural Glazing Glass photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Struct+Glass+4" alt="Structural Glazing Glass photo 4" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Struct+Glass+5" alt="Structural Glazing Glass photo 5" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">Structural Glazing Glass</div>
-                <div class="section-text">
-                    Advanced and aesthetic structural glazing for facades, showrooms, and commercial buildings. Weather-resistant, seamless glass installations for a dazzling finish.
-                </div>
+                <div class="section-text">Advanced and aesthetic structural glazing for facades, showrooms, and commercial buildings. Weather-resistant, seamless glass installations for a dazzling finish.</div>
             </div>
         </section>
 
         <!-- Spider Fittings -->
         <section class="section" id="spider-fittings">
             <div class="section-gallery" aria-label="Spider Fittings Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Spider+1" alt="Spider fitting photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Spider+2" alt="Spider fitting photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Spider+3" alt="Spider fitting photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Spider+4" alt="Spider fitting photo 4" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Spider+5" alt="Spider fitting photo 5" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Spider+1" alt="Spider fitting photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Spider+2" alt="Spider fitting photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Spider+3" alt="Spider fitting photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Spider+4" alt="Spider fitting photo 4" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Spider+5" alt="Spider fitting photo 5" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">Spider Fittings</div>
-                <div class="section-text">
-                    Modernize your glass architecture with our durable spider fittings—ideal for contemporary and frameless glass structures.
-                </div>
+                <div class="section-text">Modernize your glass architecture with our durable spider fittings—ideal for contemporary and frameless glass structures.</div>
             </div>
         </section>
 
         <!-- Louvers Panel -->
         <section class="section" id="louvers-panel">
             <div class="section-gallery" aria-label="Louvers Panel Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Louvers+1" alt="Louvers panel photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Louvers+2" alt="Louvers panel photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Louvers+3" alt="Louvers panel photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Louvers+4" alt="Louvers panel photo 4" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Louvers+5" alt="Louvers panel photo 5" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Louvers+1" alt="Louvers panel photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Louvers+2" alt="Louvers panel photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Louvers+3" alt="Louvers panel photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Louvers+4" alt="Louvers panel photo 4" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Louvers+5" alt="Louvers panel photo 5" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">Louvers Panel</div>
-                <div class="section-text">
-                    Enhance ventilation & appearance with designer louvers panels. Suitable for exteriors and interiors, both functional and aesthetic.
-                </div>
+                <div class="section-text">Enhance ventilation & appearance with designer louvers panels. Suitable for exteriors and interiors, both functional and aesthetic.</div>
             </div>
         </section>
 
         <!-- Curtain Pipes & Fittings -->
         <section class="section" id="curtain-pipes">
             <div class="section-gallery" aria-label="Curtain Pipes & Fittings Photos">
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Curtain+Pipe+1" alt="Curtain pipe photo 1" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Curtain+Pipe+2" alt="Curtain pipe photo 2" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Curtain+Pipe+3" alt="Curtain pipe photo 3" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Curtain+Pipe+4" alt="Curtain pipe photo 4" />
-                </div>
-                <div class="section-image">
-                    <img src="https://placehold.co/100x100?text=Curtain+Pipe+5" alt="Curtain pipe photo 5" />
-                </div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Curtain+Pipe+1" alt="Curtain pipe photo 1" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Curtain+Pipe+2" alt="Curtain pipe photo 2" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Curtain+Pipe+3" alt="Curtain pipe photo 3" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Curtain+Pipe+4" alt="Curtain pipe photo 4" /></div>
+                <div class="section-image"><img src="https://placehold.co/100x100?text=Curtain+Pipe+5" alt="Curtain pipe photo 5" /></div>
             </div>
             <div class="section-content">
                 <div class="section-title">Curtain Pipes & Fittings</div>
-                <div class="section-text">
-                    Complete your interior with stylish curtain pipes, rods, and all necessary fittings—easy to install and made to last.
-                </div>
+                <div class="section-text">Complete your interior with stylish curtain pipes, rods, and all necessary fittings—easy to install and made to last.</div>
             </div>
         </section>
 
@@ -811,5 +693,29 @@
         </div>
     </footer>
 
+    <script>
+        (function() {
+            const stickyBar = document.querySelector('.sticky-bar');
+            let scrollTimeout;
+
+            let lastScrollY = window.scrollY || window.pageYOffset;
+
+            function handleScroll() {
+                // Immediately fade out
+                stickyBar.classList.add('hidden');
+
+                // Clear previous timeout so fade in triggers after 600ms of no scrolling
+                if (scrollTimeout) clearTimeout(scrollTimeout);
+
+                scrollTimeout = setTimeout(() => {
+                    stickyBar.classList.remove('hidden');
+                }, 600);
+
+                lastScrollY = window.scrollY || window.pageYOffset;
+            }
+
+            window.addEventListener('scroll', handleScroll);
+        })();
+    </script>
 </body>
 </html>
