@@ -1,1 +1,451 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maa Bageswari Aluminium House | Interior & Hardware Experts, Bongaigaon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* General resets and font */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: #f3f6fb;
+            color: #222;
+        }
+        a { color: #2e63a5; text-decoration: none; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        /* Header & logo */
+        header {
+            background: #213f60;
+            color: #fff;
+            padding: 36px 0 24px;
+            box-shadow: 0 4px 20px rgba(33,63,96,0.29);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo {
+            width: 80px; height: 80px; border-radius: 16px; 
+            background: #eee; 
+            box-shadow: 0 0 10px #0001;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 2.2rem; color: #213f60;
+            margin-right: 28px;
+        }
+        .header-content {
+            flex: 1;
+        }
+        .shop-title {
+            margin: 0;
+            font-size: 2.6rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px #33506150;
+        }
+        .hook-line {
+            font-size: 1.2rem; margin-top: 4px; font-weight: 500;
+            letter-spacing: 0.7px;
+            color: #f5d76e;
+            text-shadow: 1px 1px 4px #0003;
+        }
+        
+        /* Sticky Bar CTA */
+        .sticky-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%; z-index: 99;
+            background: linear-gradient(90deg, #022c43 80%, #fed353 120%);
+            color: #fff; padding: 16px 0; box-shadow: 0 -1px 12px #02182644;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; animation: slideUp 0.9s cubic-bezier(.56,-0.09,.94,.74);
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%);}
+            to   { transform: translateY(0%);}
+        }
+        .sticky-bar button {
+            margin-left: 30px; background: #f5d76e;
+            color: #1d2843; font-weight: bold;
+            border: none; border-radius: 6px;
+            padding: 10px 25px; cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 3px 8px #0002;
+            transition: background 0.26s, color 0.26s, transform 0.18s;
+        }
+        .sticky-bar button:hover {
+            background: #fff285;
+            color: #0a1124;
+            transform: scale(1.07)
+        } 
+
+        /* 3D Section Styles */
+        .section {
+            background: linear-gradient(120deg, #fff, #e1eaf7 90%);
+            border-radius: 22px;
+            box-shadow: 0 6px 38px 0px rgba(83,103,153,0.10), 0 0 0 #fff;
+            margin: 48px 0 36px; 
+            padding: 38px 32px 32px;
+            display: flex;
+            gap: 34px;
+            align-items: flex-start;
+            transition: box-shadow 0.25s, transform 0.22s;
+            perspective: 600px;
+            min-height: 250px;
+        }
+        .section:hover {
+            box-shadow: 0 20px 50px -15px #22567960, 0 1.5px 12px 0 #aaeeff44;
+            transform: translateY(-4px) scale(1.015) rotateY(2deg);
+        }
+        .section-image {
+            width: 140px; height: 140px; background: #fafafa;
+            border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 3px 20px #bcd8fb28, 0 2px 4px #fff;
+            margin-right: 15px;
+            transition: transform 0.2s;
+        }
+        .section-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.88;}
+        .section-content {
+            flex: 1;
+        }
+        .section-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: #17335a;
+            margin: 0 0 10px 0;
+            text-shadow: 1px 1px 8px #cde6fd44;
+        }
+        .section-text {
+            font-size: 1.04rem; letter-spacing: 0.07em;
+            color: #36475e;
+            margin: 0;
+        }
+
+
+        /* Testimonials */
+        .testimonials-section {
+            background: linear-gradient(120deg, #f5f8fe 75%, #d2def7 100%);
+            border-radius: 18px;
+            box-shadow: 0 3px 24px #acb9cc44;
+            padding: 36px 30px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+        .testimonials-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 1.1px;
+            color: #22375d;
+        }
+        .testimonials-list {
+            margin-top: 27px;
+            display: flex;
+            gap: 22px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .testimonial-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px #a6e0ec22, 0 2px 5px #cde6fd51;
+            padding: 22px 18px; min-width: 230px; max-width: 260px;
+            text-align: center;
+            transition: box-shadow 0.17s, transform 0.16s;
+            cursor: pointer;
+        }
+        .testimonial-card:hover {
+            box-shadow: 0 5px 30px #93aec343, 0 1px 12px #bdf7fa35;
+            transform: translateY(-3px) scale(1.04) rotateZ(-1deg);
+        }
+        .testimonial-avatar {
+            width: 54px; height: 54px; margin: 0 auto 13px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f5d76e, #39bab7 50%, #fff 70%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; font-weight: bold; color: #17335a;
+        }
+        .testimonial-text {
+            font-size: 0.99rem;
+            margin-bottom: 12px; color: #44597e;
+        }
+        .testimonial-name {
+            font-weight: 600; letter-spacing: 0.04em; color: #213f60;
+        }
+
+        /* Footer */
+        footer {
+            background: #22375d;
+            color: #fff;
+            padding: 30px 0 28px;
+            border-top-left-radius: 22px;
+            border-top-right-radius: 22px;
+            box-shadow: 0 -4px 16px #12213133;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin:0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+        .about-footer {
+            flex: 1.5;
+            min-width: 240px;
+        }
+        .contact-footer {
+            flex: 1;
+            min-width: 200px;
+        }
+        .about-title, .contact-title { font-weight: bold; font-size: 1.18rem; margin-bottom: 10px; }
+        .about-text, .contact-info { font-size: 0.97rem; }
+        .contact-info span { display: block; margin-bottom: 6px; }
+
+        @media (max-width: 800px) {
+            header, .footer-inner { flex-direction: column; align-items: flex-start;}
+            .section { flex-direction: column; align-items: flex-start;}
+            .section-image { margin: 0 0 16px 0; }
+            .testimonials-list { flex-direction: column; align-items: center;}
+        }
+        @media (max-width: 520px) {
+            /* Font and spacing tweaks for mobile */
+            .shop-title {font-size:1.3rem;}
+            .container {width: 100%;}
+            .section {padding:16px 7px;}
+            .testimonials-section{padding:12px 6px;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-bar">
+        <span>Serving Lower Assam & Bongaigaon for 15+ Years – Transform your Interiors with Quality & Trust!</span>
+        <button onclick="window.location.href='tel:+919876543210'">Call Now for Free Consultation</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo"><!-- Place your logo img below, or keep initials as fallback -->
+            <!-- <img src="[YOUR_LOGO_LINK]" alt="Logo" style="width:100%;height:100%;"> -->
+            MB
+        </div>
+        <div class="header-content">
+            <div class="shop-title">Maa Bageswari Aluminium House</div>
+            <div class="hook-line">
+                Redefining Your Spaces with Lasting Craftsmanship | 15+ Years in Bongaigaon & Lower Assam
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- UPVC Windows & Doors -->
+        <section class="section" id="upvc-windows-doors">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=UPVC" alt="UPVC Windows & Doors">
+            </div>
+            <div class="section-content">
+                <div class="section-title">UPVC Windows & Doors (15 Years Warranty)</div>
+                <div class="section-text">
+                    Premium UPVC windows and doors designed for durability, energy efficiency, and noise reduction.
+                    Choose from a variety of designs and finishes. Backed by a 15-year warranty for peace of mind.
+                </div>
+            </div>
+        </section>
+
+        <!-- False Ceiling Designs -->
+        <section class="section" id="false-ceiling">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=False+Ceiling" alt="False Ceilings">
+            </div>
+            <div class="section-content">
+                <div class="section-title">False Ceiling Designs</div>
+                <div class="section-text">
+                    Transform your rooms with modern or classical false ceiling designs, tailored for homes & offices.
+                    Our solutions include POP, Gypsum, and modular ceilings crafted for elegance and enhanced acoustics.
+                </div>
+            </div>
+        </section>
+
+        <!-- Stainless Steel Grills, Railings, and Doors -->
+        <section class="section" id="stainless-steel">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=SS+Grills" alt="Stainless Steel Grills and Railings">
+            </div>
+            <div class="section-content">
+                <div class="section-title">Stainless Steel Grills, Railings, and Doors</div>
+                <div class="section-text">
+                    Secure your space with our high-quality stainless steel grills, railings, and main doors.
+                    Customized as per your requirements for both safety and style.
+                </div>
+            </div>
+        </section>
+
+        <!-- Readymade Doors -->
+        <section class="section" id="readymade-doors">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=Readymade+Doors" alt="Readymade Doors">
+            </div>
+            <div class="section-content">
+                <div class="section-title">Readymade Doors</div>
+                <div class="section-text">
+                    Choose from a wide range of premium readymade doors: wooden, flush, PVC, or steel.
+                    Perfect for quick installations with modern, stylish finishes.
+                </div>
+            </div>
+        </section>
+
+        <!-- Ladders and Machines -->
+        <section class="section" id="ladders-machines">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=Ladders+%26+Machineries" alt="Ladders and Machineries">
+            </div>
+            <div class="section-content">
+                <div class="section-title">Ladders & Machineries</div>
+                <div class="section-text">
+                    Find aluminum ladders, kitchen tools, household and commercial machineries.
+                    Quality, utility and superior safety in every equipment.
+                </div>
+            </div>
+        </section>
+
+        <!-- Toughened Glass -->
+        <section class="section" id="toughened-glass">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=Toughened+Glass" alt="Toughened Glass">
+            </div>
+            <div class="section-content">
+                <div class="section-title">Toughened Glass</div>
+                <div class="section-text">
+                    Secure & stylish toughened glass solutions: doors, partitions, canopies, and more.
+                    Engineered for strength, clarity, and safety.
+                </div>
+            </div>
+        </section>
+
+        <!-- Structural Glazing Glass -->
+        <section class="section" id="structural-glazing-glass">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=Struct+Glazing" alt="Structural Glazing Glass">
+            </div>
+            <div class="section-content">
+                <div class="section-title">Structural Glazing Glass</div>
+                <div class="section-text">
+                    Advanced and aesthetic structural glazing for facades, showrooms, and commercial buildings.
+                    Weather-resistant, seamless glass installations for a dazzling finish.
+                </div>
+            </div>
+        </section>
+
+        <!-- Spider Fittings -->
+        <section class="section" id="spider-fittings">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=Spider+Fittings" alt="Spider Fittings">
+            </div>
+            <div class="section-content">
+                <div class="section-title">Spider Fittings</div>
+                <div class="section-text">
+                    Modernize your glass architecture with our durable spider fittings—ideal for contemporary and frameless glass structures.
+                </div>
+            </div>
+        </section>
+
+        <!-- Louvers Panel -->
+        <section class="section" id="louvers-panel">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=Louvers+Panel" alt="Louvers Panel">
+            </div>
+            <div class="section-content">
+                <div class="section-title">Louvers Panel</div>
+                <div class="section-text">
+                    Enhance ventilation & appearance with designer louvers panels.
+                    Suitable for exteriors and interiors, both functional and aesthetic.
+                </div>
+            </div>
+        </section>
+
+        <!-- Curtain Pipes & Fittings -->
+        <section class="section" id="curtain-pipes">
+            <div class="section-image">
+                <img src="https://placehold.co/140x140?text=Curtain+Pipes" alt="Curtain Pipes & Fittings">
+            </div>
+            <div class="section-content">
+                <div class="section-title">Curtain Pipes & Fittings</div>
+                <div class="section-text">
+                    Complete your interior with stylish curtain pipes, rods, and all necessary fittings—easy to install and made to last.
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="testimonials-title">What Our Customers Say</div>
+            <div class="testimonials-list">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">A</div>
+                    <div class="testimonial-text">
+                        "Had UPVC windows fitted for my home – very professional and excellent finish. Highly recommended!"
+                    </div>
+                    <div class="testimonial-name">Anita Das, Bongaigaon</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">R</div>
+                    <div class="testimonial-text">
+                         "Modern false ceiling done for my clinic. Superb designs and timely work. Thank you for your service!"
+                    </div>
+                    <div class="testimonial-name">Rahul Bora, Kokrajhar</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">S</div>
+                    <div class="testimonial-text">
+                         "Purchased ladders and doors for my business—best products, reasonable prices, genuine shop."
+                    </div>
+                    <div class="testimonial-name">Swapan Paul, Bongaigaon</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">M</div>
+                    <div class="testimonial-text">
+                        "Staff are very helpful, explained all options before I finalized my railing and grill. Great job!"
+                    </div>
+                    <div class="testimonial-name">Md. Karim, Chirang</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">J</div>
+                    <div class="testimonial-text">
+                         "Fantastic experience! Got toughened glass and louvers panels for my office. Quality and finish is top."
+                    </div>
+                    <div class="testimonial-name">Jenny Talukdar, Barpeta</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="about-footer">
+                <div class="about-title">About Maa Bageswari Aluminium House</div>
+                <div class="about-text">
+                    For over 15 years, we have been the trusted destination in Bongaigaon and Lower Assam for aluminium fabrication, hardware, and all types of interior solutions. Our commitment to quality, unique product range and dedicated service have earned us a loyal customer base—homes, offices and commercial spaces alike. Discover innovation and reliability with every visit.
+                </div>
+            </div>
+            <div class="contact-footer">
+                <div class="contact-title">Contact Us</div>
+                <div class="contact-info">
+                    <span>📍 <b>Address:</b> Santinagar Chowk, Bongaigaon, Assam 783380</span>
+                    <span>📞 <b>Phone:</b> <a href="tel:+919876543210" style="color:#fed353;">+91 98765 43210</a></span>
+                    <span>✉️ <b>Email:</b> <a href="mailto:maabageswari.aluminium@gmail.com" style="color:#fed353;">maabageswari.aluminium@gmail.com</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
