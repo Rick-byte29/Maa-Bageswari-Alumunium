@@ -21,12 +21,12 @@
         text-decoration: none;
     }
     .container {
-        width: 94%;
+        width: 95%;
         max-width: 1200px;
         margin: 0 auto;
         padding-bottom: 24px;
     }
-    /* HEADER & LOGO */
+    /* HEADER, LOGO & STICKY BAR */
     .logo-bar {
         width: 100%;
         background: #213f60;
@@ -34,146 +34,135 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
-        box-shadow: 0 4px 20px rgba(33,63,96,0.13);
-        z-index: 1002;
+        box-shadow: 0 2px 12px rgba(33,63,96,0.09);
     }
     .logo {
         width: 120px;
         height: 120px;
-        border-radius: 32px;
+        border-radius: 38px;
         background: #eee;
-        box-shadow: 0 5px 40px #213f6066;
+        box-shadow: 0 5px 40px #213f6077;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: 800;
-        font-size: 3.6rem;
+        font-weight: 900;
+        font-size: 3.7rem;
         color: #213f60;
         letter-spacing: 3px;
+        margin-bottom: 0;
     }
-    /* STICKY BAR - after logo, before everything else */
     .sticky-bar {
         width: 100%;
         background: linear-gradient(90deg, #022c43 80%, #fed353 120%);
         color: #fff;
-        padding: 0;
-        min-height: 58px;
-        box-shadow: 0 2px 12px #02182688;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.07rem;
-        font-weight: 500;
-        letter-spacing: .01em;
-        white-space: nowrap;
-        overflow-x: auto;
-        z-index: 1001;
+        min-height: 55px;
+        display: block;
         position: sticky;
         top: 0;
-        left: 0;
+        z-index: 1010;
+        box-shadow: 0 1px 10px #02182644;
     }
     .sticky-bar-content {
-        width: 100%;
-        max-width: 1300px;
         display: flex;
+        justify-content: center;
         align-items: center;
-        justify-content: space-between;
         gap: 16px;
-        padding: 0 10px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 8.5px 6vw;
+        flex-wrap: wrap;
     }
-    .sticky-bar span {
+    .sticky-bar-content span {
+        font-size: 1.18rem;
+        font-weight: 600;
+        letter-spacing:0.01em;
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap;
         flex: 1 1 auto;
-        font-size: 1.08rem;
-        min-width: 0;
     }
-    .sticky-bar button {
-        margin-left: 16px;
-        background: #f5d76e;
-        color: #1d2843;
-        font-weight: bold;
-        border: none;
-        border-radius: 6px;
-        padding: 10px 22px;
-        cursor: pointer;
-        font-size: 1rem;
-        box-shadow: 0 3px 8px #0002;
-        transition: background 0.26s, color 0.26s, transform 0.18s;
+    .sticky-bar-content button {
+        position: relative;
         animation: pulse 1.3s infinite;
+        padding: 9px 26px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1.08rem;
+        border-radius: 6px;
+        border: none;
+        background-color: #fedb5a;
+        color: #1a2238;
+        box-shadow: 0 0 12px 2px #fedb5a;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.2s;
         white-space: nowrap;
+    }
+    .sticky-bar-content button:hover {
+        background-color: #fff7db;
+        color: #b79900;
+        box-shadow: 0 0 24px 7px #fedb5a;
     }
     @keyframes pulse {
-        0% { box-shadow: 0 0 0 0 rgba(245,215,110,0.6);}
-        70% { box-shadow: 0 0 0 12px rgba(245,215,110,0);}
-        100% { box-shadow: 0 0 0 0 rgba(245,215,110,0);}
+      0% { box-shadow: 0 0 0 0 rgba(254,219,90, 0.7); }
+      70% { box-shadow: 0 0 0 14px rgba(254,219,90, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(254,219,90, 0); }
     }
-    .sticky-bar button:hover {
-        background: #fff285;
-        color: #0a1124;
-        transform: scale(1.07);
-    }
-    /* SHOP TITLES, 3D ANIMATION ON LOAD */
+    /* MAIN TITLES - 3D ANIMATION */
     header .titles {
         background: #213f60;
         color: #fff;
-        padding-bottom: 16px;
+        padding-bottom: 18px;
         text-align: center;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
-        z-index: 10;
     }
     .shop-title {
-        margin: 30px 0 7px 0;
-        font-size: 2.1rem;
+        margin: 33px 0 11px 0;
+        font-size: 2.15rem;
         letter-spacing: 2px;
         font-weight: bold;
         color: #fff;
         display: inline-block;
-        animation: animate3DTitle 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0s both;
+        animation: animate3DTitle 1.5s cubic-bezier(0.4,0,0.2,1) 0s both;
     }
     .hook-line {
         display:inline-block;
-        font-size: 1.12rem;
+        font-size: 1.15rem;
         font-weight: 500;
-        letter-spacing: 0.7px;
         color: #f5d76e;
         text-shadow: 1px 1px 4px #0003;
-        animation: animate3DSubtitle 1.65s cubic-bezier(0.4, 0, 0.2, 1) 0.45s both;
+        animation: animate3DSubtitle 1.35s cubic-bezier(0.4,0,0.2,1) 0.4s both;
     }
     @keyframes animate3DTitle {
-        0% { opacity:0; transform:rotateY(60deg) translateZ(-80px) scale(0.92);}
-        70% { opacity:1; transform:rotateY(-8deg) translateZ(25px) scale(1.04);}
-        90% { opacity:1; }
+        0% { opacity:0; transform:rotateY(59deg) translateZ(-100px) scale(0.88);}
+        70% { opacity:1; transform:rotateY(-8deg) translateZ(24px) scale(1.04);}
         100% {opacity:1;transform:none;}
     }
     @keyframes animate3DSubtitle {
-        0% { opacity:0;  transform:rotateX(65deg) translateY(-30px) scale(0.95);}
-        74% { opacity:1; transform:rotateX(-8deg) translateY(3px);}
+        0% { opacity:0;  transform:rotateX(62deg) translateY(-28px) scale(0.93);}
+        80% { opacity:1; transform:rotateX(-8deg) translateY(5px);}
         100% {opacity:1;transform:none;}
     }
     /* SECTION LAYOUTS */
     .section, .why-choose-us, .testimonials-section {
         background: linear-gradient(120deg, #fff, #e1eaf7 90%);
-        border-radius: 22px;
-        box-shadow: 0 6px 38px 0 rgba(83, 103, 153, 0.08);
-        margin: 38px 0 36px;
-        padding: 30px 32px 24px 32px;
+        border-radius: 20px;
+        box-shadow: 0 6px 38px 0 rgba(83, 103, 153, 0.09);
+        margin: 34px 0 33px 0;
+        padding: 32px 26px 22px 26px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 17px;
     }
     .section-title {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
         font-weight: bold;
         color: #213f60;
-        margin-bottom: 9px;
+        margin-bottom: 13px;
         letter-spacing: .07em;
         margin-left: 2px;
     }
+    /* Images Row */
     .section-gallery-row {
         display: flex;
         flex-direction: row;
@@ -182,126 +171,101 @@
         margin-bottom: 13px;
         margin-top:3px;
         justify-content: flex-start;
+        overflow-x: auto;
     }
     .section-image {
-        width: 175px;
-        height: 175px;
-        max-width: 25vw;
-        min-width:82px;
-        max-height: 40vw;
+        width: 185px;
+        height: 185px;
+        max-width: 30vw;
+        min-width:95px;
+        max-height: 50vw;
         background: #fafafa;
         border-radius: 18px;
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 3px 18px #bdd8ea18, 0 2px 4px #fff;
-        transition: transform 0.19s, box-shadow 0.19s;
+        box-shadow: 0 3px 15px #bdd8ea13, 0 2px 4px #fff;
+        transition: transform 0.18s, box-shadow 0.18s;
         flex-shrink: 0;
         cursor: pointer;
-        border:2.5px solid #eee;
+        border:2.5px solid #ececec;
         position:relative;
     }
     .section-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.94;
-        transition: transform 0.24s cubic-bezier(.41,1.4,.69,.94);
+        opacity: 0.96;
+        transition: transform 0.21s cubic-bezier(.41,1.4,.69,.94);
     }
-    .section-image:hover {
-        box-shadow: 0 8px 28px #bcd8fb67, 0 2px 12px #0001;
-        transform: scale(1.07) rotateZ(-2.5deg) rotateX(2deg);
+    .section-image:hover, .section-image:focus {
+        box-shadow: 0 8px 32px #bcd8fb77, 0 2px 12px #0002;
+        transform: scale(1.08) rotateZ(-2deg) rotateX(2deg);
         z-index:2;
     }
-    .section-image:hover img {
-        transform: scale(1.1) rotateZ(1.5deg);
+    .section-image:hover img, .section-image:focus img {
+        transform: scale(1.1) rotateZ(1deg);
         opacity: 1;
     }
     .section-text {
-        font-size: 1.13rem;
+        font-size: 1.12rem;
         letter-spacing: 0.04em;
         color: #36475e;
-        margin: 0;
         margin-left: 2px;
         min-width: 150px;
     }
     /* WHY CHOOSE US */
     .why-choose-us {
         background: linear-gradient(120deg, #d9e4fc, #f3f6fb);
-        box-shadow: 0 6px 38px 0 rgba(83, 103, 153, 0.1);
-        padding: 28px 24px;
-        border-radius: 22px;
-        margin: 36px 0 30px;
-        text-align: left;
+        padding: 22px 17px;
+        margin: 30px 0 26px;
     }
     .why-choose-us-title {
-        font-size: 1.18rem;
+        font-size: 1.2rem;
         font-weight: 700;
         color: #17335a;
         text-align: center;
-        letter-spacing: .1em;
-        margin-bottom: 18px;
+        margin-bottom: 15px;
         text-shadow: 1px 1px 5px #a0b3d3cc;
     }
     .why-choose-us-list {
         list-style: disc inside;
-        font-size: 1.10rem;
+        font-size: 1.07rem;
         color: #36475e;
-        max-width: 760px;
+        max-width: 800px;
         margin: 0 auto;
-        line-height: 1.55;
-        padding-left: 8px;
+        line-height: 1.6;
+        padding-left: 6px;
     }
     /* TESTIMONIALS */
-    .testimonials-section {
-        padding-top: 28px;
-    }
-    .testimonials-title {
-        font-size: 1.17rem;
-        font-weight: 700;
-        text-align: center;
-        color: #22375d;
-        margin-bottom: 22px;
-    }
+    .testimonials-section {padding-top: 20px;}
+    .testimonials-title {font-size: 1.18rem; font-weight: 700; text-align: center; color: #22375d; margin-bottom: 19px;}
     .testimonials-list {
-        display: flex;
-        gap: 18px;
-        justify-content: center;
-        flex-wrap: wrap;
+        display: flex; gap: 13px; justify-content: center; flex-wrap: wrap;
     }
     .testimonial-card {
         background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 2px 12px #a6e0ec22, 0 2px 5px #cde6fd51;
-        padding: 22px 16px;
-        min-width: 210px; max-width: 240px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px #a6e0ec19, 0 2px 5px #cde6fd51;
+        padding: 18px 15px;
+        min-width: 170px; max-width: 220px;
         text-align: center;
-        transition: box-shadow 0.17s, transform 0.13s;
+        transition: box-shadow 0.15s, transform 0.1s;
         cursor: pointer;
     }
-    .testimonial-card:hover {
-        box-shadow: 0 5px 24px #93aec343, 0 1px 10px #bdf7fa35;
-        transform: translateY(-3px) scale(1.04) rotateZ(-1.5deg);
-    }
-    .testimonial-avatar {
-        width: 49px; height: 49px; margin: 0 auto 13px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #f5d76e, #39bab7 50%, #fff 70%);
-        display: flex; align-items: center; justify-content: center;
-        font-size: 1.34rem; font-weight: bold; color: #17335a;
-    }
+    .testimonial-card:hover {box-shadow: 0 5px 20px #93aec33a;}
+    .testimonial-avatar {width:44px; height:44px; margin:0 auto 10px;border-radius:50%;background:linear-gradient(135deg,#f5d76e,#39bab7 54%,#fff 75%);display:flex;align-items:center;justify-content:center;font-size:1.14rem;font-weight:bold;color:#17335a;}
     .testimonial-text { font-size: 0.99rem; margin-bottom: 12px; color: #44597e;}
     .testimonial-name { font-weight: 600; letter-spacing: 0.04em; color: #213f60; }
     /* FOOTER */
     footer {
         background: #22375d;
         color: #fff;
-        padding: 26px 13px 18px 13px;
-        border-top-left-radius: 22px;
-        border-top-right-radius: 22px;
-        box-shadow: 0 -4px 16px #12213133;
-        margin: 38px 0 0;
+        padding: 26px 8px 18px 8px;
+        border-top-left-radius: 21px;
+        border-top-right-radius: 21px;
+        margin: 30px 0 0;
     }
     .footer-inner {
         max-width: 1100px;
@@ -310,100 +274,54 @@
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 22px;
-        align-items: flex-start;
+        gap: 16px;
     }
-    .about-footer { flex: 1.5; min-width: 210px; margin-right: 15px;}
-    .contact-footer { flex: 1; min-width: 160px;}
-    .about-title,
-    .contact-title { font-weight: bold; font-size: 1.13rem; margin-bottom: 8px; }
-    .about-text,
-    .contact-info { font-size: 0.97rem; }
+    .about-footer { flex:1.5; min-width:185px;}
+    .contact-footer { flex:1; min-width:155px;}
+    .about-title, .contact-title { font-weight: bold; font-size: 1.13rem; margin-bottom: 7px; }
+    .about-text, .contact-info { font-size: 0.97rem; }
     .contact-info span { display: block; margin-bottom: 6px; }
-    .footer-social {
-        margin-top: 16px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    .footer-social-label {
-        font-weight: 600;
-        margin-right: 4px;
-        letter-spacing: 0.03em;
-        font-size: 1rem;
-        color: #ffd05e;
-    }
+    .footer-social { margin-top: 16px; display: flex; align-items: center; gap: 15px;}
+    .footer-social-label { font-weight: 600; margin-right: 4px; font-size: 1rem; color: #ffd05e;}
     .footer-social a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: #fff;
-        margin-right: 2px;
-        color: #22375d;
-        font-size: 1.23rem;
-        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-        box-shadow: 0 2px 8px #97aaf333;
-        text-decoration: none;
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 36px; height: 36px; border-radius: 50%;
+        background: #fff; margin-right: 2px; color: #22375d;
+        font-size: 1.23rem; transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        box-shadow: 0 2px 8px #97aaf333; text-decoration: none;
     }
-    .footer-social a:hover {
-        background: #fed353;
-        color: #21478b;
-        box-shadow: 0 4px 14px #22375d44;
-        transform: scale(1.08);
-    }
-    .footer-social .svg-icon {
-        display: inline-block;
-        width: 22px;
-        height: 22px;
-    }
+    .footer-social a:hover { background: #fed353; color: #21478b; box-shadow: 0 4px 14px #22375d44; transform: scale(1.08);}
+    .footer-social .svg-icon { display:inline-block; width:22px; height:22px;}
     /* Responsive for Mobile */
-    @media (max-width: 1100px) {
-        .container { width: 99%; }
-        .logo {width:100px;height:100px;}
-    }
-    @media (max-width: 900px) {
-        .footer-inner, .header-top { flex-direction: column; align-items: center;}
-        .about-footer { margin-right:0;}
-    }
+    @media (max-width: 1150px) {.container{width:99%;}}
+    @media (max-width: 950px) {.footer-inner, .logo-bar, .header-top {flex-direction: column; align-items: center;}}
     @media (max-width: 768px) {
-        .container { width: 100%; }
-        .section, .why-choose-us, .testimonials-section, footer { padding: 13px 5vw 19px;}
-        .logo-bar {padding-top:18px;}
-        .logo {width:70px;height:70px;}
-        .section-gallery-row { gap:10px;}
-        .section-image { height:17vw; width:17vw; min-width:65px; min-height:65px;}
-        .testimonials-list { gap:11px;}
-        .testimonial-card {min-width:180px;}
-        .footer-inner {gap:8px;}
-        .sticky-bar-content {flex-direction: column; gap:6px; align-items:flex-start;}
-        .sticky-bar button { margin-left:0}
-        .sticky-bar span { font-size:0.97rem; }
+        .logo {width:74px; height:74px; font-size:2.1rem;}
+        .section-gallery-row { gap:11px;}
+        .section-image {height:22vw; width:22vw; min-width:62px;}
+        .footer-inner{gap:6px;}
+        .sticky-bar-content {padding:6px 5vw;}
+        .sticky-bar-content span{font-size: .96rem;}
     }
-    @media (max-width: 520px) {
-        .shop-title { font-size: 1.1rem; }
-        .container { width: 100%; }
-        .sticky-bar {font-size:0.93rem;}
-        .section-title { font-size: .97rem;}
-        .section-image { width:54px; height:54px;}
-        .section-gallery-row { gap:6px;}
+    @media (max-width: 580px) {
+        .section, .why-choose-us, .testimonials-section, footer {padding:11px 2vw 13px;}
+        .section-title, .why-choose-us-title {font-size:1.04rem;}
+        .section-gallery-row{gap:6px;}
+        .logo-bar{padding-top:10px;}
+        .sticky-bar-content{gap:7px;}
     }
 </style>
 </head>
 <body>
 <!-- LOGO BAR & STICKY BAR -->
 <div class="logo-bar">
-    <div class="logo">
-        MB
-    </div>
+    <div class="logo">MB</div>
 </div>
 <div class="sticky-bar">
   <div class="sticky-bar-content">
-    <span>Transform your Interiors with Quality & Trust!</span>
+    <span>Transform interiors with Quality and Trust!</span>
     <button onclick="window.location.href='tel:+919876543210'" aria-label="Call now for free consultation">
-      Call Now for Free Consultation
+      Call Now
     </button>
   </div>
 </div>
@@ -413,128 +331,126 @@
         <div class="hook-line">Redefining Your Spaces with Lasting Craftsmanship | 15+ Years in Bongaigaon & Lower Assam</div>
     </div>
 </header>
-
 <main class="container">
-  <!-- Example for each section: headline, then images row, then text -->
+  <!-- Repeatable Section Example (create all 10+ as needed; headlines > big images row > text) -->
   <section class="section fade-section" id="upvc-windows-doors">
       <div class="section-title">UPVC Windows & Doors (15 Years Warranty)</div>
       <div class="section-gallery-row">
-          <div class="section-image"><img src="https://placehold.co/250x250?text=UPVC+1" alt="UPVC Window photo 1" /></div>
-          <div class="section-image"><img src="https://placehold.co/250x250?text=UPVC+2" alt="UPVC Window photo 2" /></div>
-          <div class="section-image"><img src="https://placehold.co/250x250?text=UPVC+3" alt="UPVC Window photo 3" /></div>
-          <div class="section-image"><img src="https://placehold.co/250x250?text=UPVC+4" alt="UPVC Window photo 4" /></div>
-          <div class="section-image"><img src="https://placehold.co/250x250?text=UPVC+5" alt="UPVC Window photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+1" alt="UPVC Window photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+2" alt="UPVC Window photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+3" alt="UPVC Window photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+4" alt="UPVC Window photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+5" alt="UPVC Window photo 5" /></div>
       </div>
       <div class="section-text">
           Premium UPVC windows and doors designed for durability, energy efficiency, and noise reduction. Choose from a variety of designs and finishes. Backed by a 15-year warranty for peace of mind.
       </div>
   </section>
+  <!-- ...repeat for all sections in the same structure: headline, images row, text below... -->
   <section class="section fade-section" id="false-ceiling">
       <div class="section-title">False Ceiling Designs</div>
       <div class="section-gallery-row">
-          <div class="section-image"><img src="https://placehold.co/250x250?text=Ceiling+1" alt="False Ceiling photo 1" /></div>
-          <div class="section-image"><img src="https://placehold.co/250x250?text=Ceiling+2" alt="False Ceiling photo 2" /></div>
-          <div class="section-image"><img src="https://placehold.co/250x250?text=Ceiling+3" alt="False Ceiling photo 3" /></div>
-          <div class="section-image"><img src="https://placehold.co/250x250?text=Ceiling+4" alt="False Ceiling photo 4" /></div>
-          <div class="section-image"><img src="https://placehold.co/250x250?text=Ceiling+5" alt="False Ceiling photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+1" alt="False Ceiling photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+2" alt="False Ceiling photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+3" alt="False Ceiling photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+4" alt="False Ceiling photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+5" alt="False Ceiling photo 5" /></div>
       </div>
       <div class="section-text">
-          Transform your rooms with modern or classical false ceiling designs, tailored for homes & offices. Our solutions include POP, Gypsum, and modular ceilings crafted for elegance and acoustic improvement.
+          Transform your rooms with modern or classical false ceiling designs, tailored for homes & offices. Our solutions include POP, Gypsum, and modular ceilings.
       </div>
   </section>
-  <!-- Repeat for each section: Section Title, Row with 5 images, and Text below. -->
-
-  <!-- ... Include all other sections here, maintaining the new image-first design for each ... -->
-  <!-- Stainless Steel Grills ... -->
-  <section class="section fade-section" id="stainless-steel">
+  <section class="section fade-section">
       <div class="section-title">Stainless Steel Grills, Railings, and Doors</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/250x250?text=SS+1" alt="SS 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=SS+2" alt="SS 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=SS+3" alt="SS 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=SS+4" alt="SS 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=SS+5" alt="SS 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+1" alt="SS 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+2" alt="SS 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+3" alt="SS 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+4" alt="SS 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+5" alt="SS 5" /></div>
       </div>
       <div class="section-text">High-quality stainless steel grills, railings, and doors. Customized for safety and style.</div>
   </section>
-  <section class="section fade-section" id="readymade-doors">
+  <!-- ... Continue ALL SECTIONS exactly in this format ... -->
+  <section class="section fade-section">
       <div class="section-title">Readymade Doors</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Door+1" alt="Door 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Door+2" alt="Door 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Door+3" alt="Door 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Door+4" alt="Door 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Door+5" alt="Door 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+1" alt="Door 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+2" alt="Door 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+3" alt="Door 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+4" alt="Door 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+5" alt="Door 5" /></div>
       </div>
-      <div class="section-text">Wide range of ready-to-fit doors—wood, flush, PVC, or steel. Stylish, strong, and fast to install.</div>
+      <div class="section-text">Wide range of ready-to-fit doors—wood, flush, PVC, or steel. Stylish, strong, fast to install.</div>
   </section>
-  <section class="section fade-section" id="ladders-machines">
+  <section class="section fade-section">
       <div class="section-title">Ladders & Machineries</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Ladder+1" alt="Ladder 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Ladder+2" alt="Ladder 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Ladder+3" alt="Ladder 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Machine+1" alt="Machine 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Machine+2" alt="Machine 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Ladder+1" alt="Ladder 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Ladder+2" alt="Ladder 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Ladder+3" alt="Ladder 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Machine+1" alt="Machine 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Machine+2" alt="Machine 2" /></div>
       </div>
-      <div class="section-text">Aluminum ladders, kitchen tools, and a variety of household and commercial machines—safe and reliable.</div>
+      <div class="section-text">Aluminum ladders and commercial machines—safe, reliable and utility-proven.</div>
   </section>
-  <section class="section fade-section" id="toughened-glass">
+  <section class="section fade-section">
       <div class="section-title">Toughened Glass</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glass+1" alt="Glass 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glass+2" alt="Glass 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glass+3" alt="Glass 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glass+4" alt="Glass 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glass+5" alt="Glass 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+1" alt="Glass 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+2" alt="Glass 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+3" alt="Glass 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+4" alt="Glass 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+5" alt="Glass 5" /></div>
       </div>
-      <div class="section-text">Doors, partitions, canopies, and more—toughened glass for strength, clarity, and safety.</div>
+      <div class="section-text">Doors, partitions, canopies, and more—glass engineered for strength, clarity, and safety.</div>
   </section>
-  <section class="section fade-section" id="structural-glazing-glass">
+  <section class="section fade-section">
       <div class="section-title">Structural Glazing Glass</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glazing+1" alt="Glazing 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glazing+2" alt="Glazing 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glazing+3" alt="Glazing 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glazing+4" alt="Glazing 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Glazing+5" alt="Glazing 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glazing+1" alt="Glazing 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glazing+2" alt="Glazing 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glazing+3" alt="Glazing 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glazing+4" alt="Glazing 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Glazing+5" alt="Glazing 5" /></div>
       </div>
-      <div class="section-text">Glazing for facades, showrooms, and buildings: weather-resistant and seamless.</div>
+      <div class="section-text">Glazing for facades, showrooms, and commercial buildings: weather-resistant and seamless.</div>
   </section>
-  <section class="section fade-section" id="spider-fittings">
+  <section class="section fade-section">
       <div class="section-title">Spider Fittings</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Spider+1" alt="Spider 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Spider+2" alt="Spider 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Spider+3" alt="Spider 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Spider+4" alt="Spider 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Spider+5" alt="Spider 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+1" alt="Spider 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+2" alt="Spider 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+3" alt="Spider 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+4" alt="Spider 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+5" alt="Spider 5" /></div>
       </div>
       <div class="section-text">Modern spider fitting accessories for stunning, frameless glass architecture.</div>
   </section>
-  <section class="section fade-section" id="louvers-panel">
+  <section class="section fade-section">
       <div class="section-title">Louvers Panel</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Louvers+1" alt="Louvers 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Louvers+2" alt="Louvers 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Louvers+3" alt="Louvers 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Louvers+4" alt="Louvers 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Louvers+5" alt="Louvers 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+1" alt="Louvers 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+2" alt="Louvers 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+3" alt="Louvers 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+4" alt="Louvers 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+5" alt="Louvers 5" /></div>
       </div>
       <div class="section-text">Improve airflow and looks with designer louvers panels—exterior and interior ready.</div>
   </section>
-  <section class="section fade-section" id="curtain-pipes">
+  <section class="section fade-section">
       <div class="section-title">Curtain Pipes & Fittings</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Curtain+1" alt="Curtain 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Curtain+2" alt="Curtain 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Curtain+3" alt="Curtain 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Curtain+4" alt="Curtain 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/250x250?text=Curtain+5" alt="Curtain 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+1" alt="Curtain 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+2" alt="Curtain 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+3" alt="Curtain 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+4" alt="Curtain 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+5" alt="Curtain 5" /></div>
       </div>
       <div class="section-text">Sleek curtain pipes and all fittings for easy and lasting installations in any home.</div>
   </section>
-  <section class="why-choose-us fade-section" id="why-choose-us">
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose-us fade-section">
       <div class="why-choose-us-title">Why Choose Us</div>
       <ul class="why-choose-us-list">
           <li>Over 15 years of trusted experience in Lower Assam and Bongaigaon.</li>
@@ -549,6 +465,7 @@
           <li>Dedicated after-sales service and maintenance support.</li>
       </ul>
   </section>
+  <!-- TESTIMONIALS -->
   <section class="testimonials-section fade-section">
       <div class="testimonials-title">What Our Customers Say</div>
       <div class="testimonials-list">
@@ -619,9 +536,9 @@
             fadeEls.forEach(function(el,i){
                 setTimeout(function(){
                     el.classList.add('visible');
-                }, 180 + i*120);
+                }, 180 + i*90);
             });
-        }, 150);
+        }, 130);
     });
 </script>
 </body>
