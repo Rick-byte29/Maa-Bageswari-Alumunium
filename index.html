@@ -10,18 +10,123 @@
   *, *:before, *:after { box-sizing: inherit; }
   body { margin:0; padding:0; font-family:'Montserrat',sans-serif; background:#f3f6fb; color:#222; }
   .container { width:95%; max-width:1200px; margin:0 auto; }
-  .logo-bar { width:100%; background:#213f60; padding:38px 0 26px 0; display:flex; justify-content:center; align-items:center;}
-  .logo { width:130px; height:130px; border-radius:36px; background:#eee; box-shadow:0 7px 38px #3d4f6080; display:flex;align-items:center;justify-content:center; font-weight:900; font-size:3.6rem; letter-spacing:2.5px; color:#213f60;}
-  .logo img { width:100%; height:100%; border-radius:36px; object-fit:cover; }
-  .sticky-bar { width:100%; background:linear-gradient(90deg, #022c43 82%, #fed353 130%); position:sticky; top:0; left:0; z-index:1005; box-shadow:0 2px 12px #02182688; display:flex; justify-content:center; align-items:center; min-height:56px;}
-  .sticky-bar-content { max-width:980px; margin:0 auto; display:flex; justify-content:center; align-items:center; padding:0 3vw; width:100%;}
-  .sticky-bar-content button { padding:12px 38px; background:#fedb5a; border:none; border-radius:30px; font-size:1.15rem; font-weight:800; color:#1c2a3b; cursor:pointer; box-shadow:0 0 10px #febf2470; position:relative; animation:pulse 1.4s infinite; transition:background 0.3s, color 0.3s, transform 0.2s; white-space:nowrap;}
-  .sticky-bar-content button:hover { background:#fff7db; color:#b79900; box-shadow:0 0 19px #fedb5a;}
+  
+  /* Call-to-action button at the very top */
+  .sticky-bar {
+    width: 100%;
+    background: linear-gradient(90deg, #022c43 82%, #fed353 130%);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1005;
+    box-shadow: 0 2px 12px #02182688;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 56px;
+  }
+  .sticky-bar-content {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3vw;
+    width: 100%;
+  }
+  .sticky-bar-content button {
+    padding: 12px 38px;
+    background: #fedb5a;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #1c2a3b;
+    cursor: pointer;
+    box-shadow: 0 0 10px #febf2470;
+    position: relative;
+    animation: pulse 1.4s infinite;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .sticky-bar-content button:hover {
+    background: #fff7db;
+    color: #b79900;
+    box-shadow: 0 0 19px #fedb5a;
+  }
   @keyframes pulse {0%,100%{box-shadow:0 0 0 0 rgba(254,219,90,.7);}50%{box-shadow:0 0 14px 8px rgba(254,219,90,.29);}}
-  header .titles { background:#213f60; color:#fff; padding-bottom:21px; text-align:center;}
-  .shop-title { margin:35px 0 8px 0; font-size:2.11rem; letter-spacing:2px; font-weight:bold; display:inline-block; color:#fff; animation:animate3DTitle 1.5s cubic-bezier(.4,0,.2,1) 0s both;}
-  .hook-line { display:inline-block; font-size:1.12rem; font-weight:500; color:#fed353; text-shadow:1px 1px 4px #0003; animation:animate3DSubtitle 1.25s cubic-bezier(.4,0,.2,1) .45s both;}
-  /* Unique About Us Styles */
+
+  /* New header flex layout for logo and titles */
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3vw;
+    background: #213f60;
+    padding: 30px 4vw 16px 4vw;
+    min-height: 160px;
+    box-shadow: 0 7px 38px #3d4f6030;
+  }
+  .logo {
+    width: 130px;
+    height: 130px;
+    border-radius: 36px;
+    background: #eee;
+    box-shadow: 0 7px 38px #3d4f6080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 36px;
+    object-fit: cover;
+  }
+  .header-title-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex:1;
+    min-width:0;
+  }
+  .shop-title {
+    font-size: 2.11rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 10px;
+    background: none;
+    animation: animate3DTitle 1.5s cubic-bezier(.4,0,.2,1) 0s both;
+    word-break: break-word;
+  }
+  .hook-line-wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .hook-line {
+    font-size: 1.12rem;
+    font-weight: 500;
+    color: #fed353;
+    background: #22375d;
+    padding: 10px 22px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px #fed35332;
+    margin-top: 8px;
+    margin-bottom: 0;
+    width: fit-content;
+    text-align: left;
+    text-shadow: 1px 1px 4px #0002;
+    animation: animate3DSubtitle 1.25s cubic-bezier(.4,0,.2,1) .45s both;
+    word-break: break-word;
+  }
+  @keyframes animate3DTitle { 0% {opacity:0;transform:rotateY(59deg) translateZ(-100px) scale(0.88);}70% {opacity:1;transform:rotateY(-8deg) translateZ(24px) scale(1.04);}100% {opacity:1;transform:none;} }
+  @keyframes animate3DSubtitle { 0%{opacity:0;transform:rotateX(62deg) translateY(-28px) scale(.93);}80%{opacity:1;transform:rotateX(-8deg) translateY(5px);}100%{opacity:1;transform:none;} }
+
+  /* ... the existing about, section, footer etc. styles ... */
   .about-main {
     margin:36px 0 34px 0;
     padding:38px 6vw 28px 6vw;
@@ -67,10 +172,6 @@
   .about-decor2 {
     position:absolute; bottom:10px; right:5vw; width:29px; height:29px; background: linear-gradient(135deg,#39bab733 10%, #fed35377 90%); border-radius:50%; filter:blur(6px);
   }
-
-  @keyframes animate3DTitle { 0% {opacity:0;transform:rotateY(59deg) translateZ(-100px) scale(0.88);}70% {opacity:1;transform:rotateY(-8deg) translateZ(24px) scale(1.04);}100% {opacity:1;transform:none;} }
-  @keyframes animate3DSubtitle { 0%{opacity:0;transform:rotateX(62deg) translateY(-28px) scale(.93);}80%{opacity:1;transform:rotateX(-8deg) translateY(5px);}100%{opacity:1;transform:none;} }
-
   .section, .why-choose-us, .testimonials-section {
     background: #fff; border-radius: 18px;
     box-shadow: 0 4px 24px #c5c5da13;
@@ -108,7 +209,6 @@
     color: #36475e;
     margin: 0;
   }
-
   .why-choose-us, .testimonials-section {margin-top:30px;}
   .why-choose-us-title {
     font-size: 1.15rem;
@@ -126,7 +226,6 @@
     line-height: 1.64;
     padding-left: 6px;
   }
-
   .testimonials-title {
     font-size: 1.18rem;
     font-weight: 700;
@@ -175,7 +274,6 @@
     letter-spacing: 0.04em;
     color: #213f60;
   }
-
   footer {
     background: #22375d;
     color: #fff;
@@ -257,7 +355,6 @@
     font-weight: bold;
     text-decoration: underline;
   }
-
   .whatsapp-float {
     position: fixed;
     bottom: 22px;
@@ -278,101 +375,48 @@
   .whatsapp-float:hover {
     background: #18b45b;
   }
-
   @media (max-width: 900px){
     .section-image { max-width: 80vw; }
+    .header-flex{flex-direction:column;align-items:flex-start;}
+    .header-title-group{width:100%;}
+    .logo{margin-bottom:16px;}
+    .hook-line-wrapper{justify-content:flex-start;}
   }
   @media (max-width: 600px){
     .section-gallery-row { gap: 10px; }
     .section-image { max-width: 98vw; padding: 2px;}
+    .logo {width: 80px; height:80px;}
+    .shop-title { font-size: 1.25rem;}
+    .header-flex {padding: 16px 2vw 11px 2vw;min-height:80px;}
+    .hook-line {font-size:1rem;padding:5px 9px;}
   }
-  @media (max-width: 920px) {
-    .footer-inner {
-      gap: 16px;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  @media (max-width: 768px) {
-    .logo-bar {
-      padding-top: 19px;
-    }
-    .logo {
-      width: 75px;
-      height: 75px;
-      font-size: 2.2rem;
-    }
-    .sticky-bar-content button {
-      padding: 11px 14px;
-    }
-    .about-main {padding: 28px 2vw 20px 2vw;}
-    .about-headline{font-size:1.16rem;}
-    .about-lead{font-size:.99rem;}
-    .about-decor,.about-decor2{display:none;}
-    .about-main{margin:19px 0 18px 0;}
-    .about-decor{left:0;}
-    .about-decor2{right:0;}
-    .about-main:hover{transform:scale(1.013);}
-    .section-gallery-row{gap:9px;}
-    .about-section, .contact-section {
-      flex-basis: 100%;
-    }
-    .section {
-      padding-left: 3vw;
-      padding-right: 3vw;
-    }
-  }
-  @media (max-width: 480px) {
-    .section, .why-choose-us, footer {
-      padding: 8px 1vw 12px;
-    }
-    .section-title, .why-choose-us-title {
-      font-size: 0.96rem;
-    }
-    .footer-inner {
-      gap: 8px;
-    }
-    .sticky-bar-content {
-      padding: 8px 1vw;
-    }
-    .sticky-bar-content button {
-      font-size: 0.95rem;
-      padding: 8px 11px;
-    }
-    .about-title, .contact-title {
-      font-size: 1rem;
-    }
-    .whatsapp-float {
-      width: 44px;
-      height: 44px;
-    }
-    .logo {
-      width: 52px;
-      height: 52px;
-    }
+  @media (max-width:480px){
+    .header-flex {flex-direction:column;padding-left:3vw;padding-right:3vw;}
+    .section, .why-choose-us, footer {padding: 8px 1vw 12px;}
+    .section-title, .why-choose-us-title {font-size: 0.96rem;}
+    .footer-inner {gap: 8px;}
   }
 </style>
 </head>
 <body>
-  <div class="logo-bar">
-    <div class="logo">
-      <img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Logo.jpg?raw=true" alt="Maa Bageswari Aluminium House Logo" />
-    </div>
-  </div>
-
   <div class="sticky-bar">
     <div class="sticky-bar-content">
       <button aria-label="Call Now for Free Consultation" onclick="window.location.href='tel:+919876543210'">Call Now For Free Consultation</button>
     </div>
   </div>
-
   <header>
-    <div class="titles">
-      <div class="shop-title">Maa Bageswari Aluminium House</div>
-      <div class="hook-line">Redefining Your Spaces with Lasting Craftsmanship | 15+ Years in Bongaigaon & Lower Assam</div>
+    <div class="header-flex">
+      <div class="logo">
+        <img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Logo.jpg?raw=true" alt="Maa Bageswari Aluminium House Logo" />
+      </div>
+      <div class="header-title-group">
+        <div class="shop-title">Maa Bageswari Aluminium House</div>
+        <div class="hook-line-wrapper">
+          <div class="hook-line">Redefining Your Spaces with Lasting Craftsmanship | 15+ Years in Bongaigaon & Lower Assam</div>
+        </div>
+      </div>
     </div>
   </header>
-  
   <!-- UNIQUE, ANIMATED About Us MAIN section -->
   <div class="about-main fade-section">
     <span class="about-decor"></span>
@@ -382,11 +426,8 @@
       For over 15 years, Maa Bageswari Aluminium House has been the trusted destination in Bongaigaon and Lower Assam for aluminium fabrication, hardware, and bespoke interior solutions. Our commitment to quality, design, and service transforms spaces—residences, offices, and commercial venues—into places of lasting beauty and function. Discover the difference built on a legacy of integrity and innovation.
     </div>
   </div>
-
   <main class="container">
-
     <!-- All image/text sections as previous -->
-    <!-- ... (keep all the product/service/image sections and everything else as in previous answer) ... -->
     <section class="section fade-section" id="upvc-windows-doors">
       <div class="section-title">UPVC Windows & Doors (15 Years Warranty)</div>
       <div class="section-gallery-row">
@@ -400,7 +441,6 @@
         Premium UPVC windows and doors designed for durability, energy efficiency, and noise reduction. Choose from a variety of designs and finishes. Backed by a 15-year warranty for peace of mind.
       </div>
     </section>
-    <!-- ... all other image-based sections (False Ceiling, Stainless Steel, etc.) ... -->
     <section class="section fade-section" id="false-ceiling">
       <div class="section-title">False Ceiling Designs</div>
       <div class="section-gallery-row">
@@ -518,7 +558,6 @@
         Complete your interior with stylish curtain pipes, rods, and all necessary fittings—easy to install and made to last.
       </div>
     </section>
-
     <section class="why-choose-us fade-section">
       <div class="why-choose-us-title">Why Choose Us</div>
       <ul class="why-choose-us-list">
@@ -534,7 +573,6 @@
         <li>Dedicated after-sales service and maintenance support.</li>
       </ul>
     </section>
-
     <section class="testimonials-section fade-section">
       <div class="testimonials-title">What Our Customers Say</div>
       <div class="testimonials-list">
@@ -566,7 +604,6 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="footer-inner">
       <div class="about-section">
@@ -595,7 +632,6 @@
       </div>
     </div>
   </footer>
-
   <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <svg fill="white" width="36" height="36" viewBox="0 0 24 24"><path d="M12 2C6.476 2 2 6.478 2 12c0 1.948.57 3.774 1.554 5.314L2 22l4.814-1.546C8.227 21.43 10.053 22 12 22c5.523 0 10-4.478 10-10S17.523 2 12 2zm.006 17c-1.658 0-3.287-.446-4.664-1.284l-.332-.195-2.857.917.943-2.836-.215-.348C4.45 13.287 4 11.666 4 9.995 4 6.144 7.149 3 12 3c4.852 0 8 3.144 8 6.995 0 1.671-.448 3.292-1.144 4.41l-.216.348.944 2.835-2.858-.917-.332.195C15.292 18.554 13.662 19 12.006 19zm4.073-5.659c-.207-.104-1.225-.605-1.414-.674-.189-.07-.328-.104-.467.103-.14.207-.538.674-.66.812-.121.14-.243.157-.45.053-.207-.104-.874-.322-1.666-1.025-.616-.547-1.032-1.223-1.154-1.429-.121-.207-.013-.318.09-.422.092-.092.207-.241.311-.361.104-.121.139-.207.207-.346.07-.14.035-.249-.018-.353-.053-.104-.467-1.128-.641-1.545-.168-.395-.34-.342-.466-.349l-.399-.008c-.129 0-.335.048-.511.232-.176.184-.67.673-.67 1.641 0 .968.687 1.904.783 2.038.104.14 1.353 2.066 3.277 2.814.459.158.816.252 1.095.322.46.11.88.095 1.21.058.372-.042 1.225-.499 1.397-.98.173-.482.173-.896.121-.98-.052-.085-.189-.14-.396-.244z"/></svg>
   </a>
