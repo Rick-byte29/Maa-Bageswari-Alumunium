@@ -96,28 +96,26 @@
   }
   .section-title {font-size:1.27rem; font-weight:bold; color:#213f60; margin-bottom:15px;}
   .section-gallery-row {
-    display: flex; flex-direction: row; gap:22px; width:100%; margin-bottom:17px; justify-content:flex-start; overflow-x: auto;
+    display: flex; flex-wrap: wrap; gap:22px; width:100%; margin-bottom:17px; justify-content:flex-start; align-items: flex-start;
   }
   .section-image {
-    width:180px; height:180px; min-width:88px; max-width:35vw; max-height:36vw; background:#fafafa;
-    border-radius:18px; overflow:hidden; display:flex;align-items:center;justify-content:center;
-    box-shadow:0 3px 15px #bdd8ea11, 0 2px 4px #fff;
-    transition:transform .18s,box-shadow .18s;
-    flex-shrink: 0; cursor:pointer; border:2.7px solid #f3f4fd; position:relative;
+    padding: 6px;
+    background: #fafafa;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px #eee8;
+    border: 2px solid #f0f1f5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 45vw;
   }
   .section-image img {
-    width:100%; height:100%; object-fit: cover;
-    opacity: .96; transition: transform 0.21s cubic-bezier(.41,1.4,.69,.94);
-  }
-  .section-image:hover,
-  .section-image:focus {
-    box-shadow: 0 8px 32px #bcd8fb99, 0 2px 12px #0002;
-    transform: scale(1.08) rotateZ(-2deg);
-    z-index: 10;
-  }
-  .section-image:hover img,
-  .section-image:focus img {
-    transform: scale(1.09);
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    aspect-ratio: auto;
   }
   .section-text {
     font-size: 1.13rem;
@@ -303,6 +301,13 @@
     background: #18b45b;
   }
 
+  @media (max-width: 900px){
+    .section-image { max-width: 80vw; }
+  }
+  @media (max-width: 600px){
+    .section-gallery-row { gap: 10px; }
+    .section-image { max-width: 98vw; padding: 2px;}
+  }
   @media (max-width: 920px) {
     .footer-inner {
       gap: 16px;
@@ -322,20 +327,12 @@
     .sticky-bar-content button {
       padding: 11px 14px;
     }
-    .section-gallery-row {
-      gap: 9px;
-    }
     .about-section, .contact-section {
       flex-basis: 100%;
     }
     .section {
       padding-left: 3vw;
       padding-right: 3vw;
-    }
-    .section-image {
-      width: 99px;
-      height: 99px;
-      max-width: 31vw;
     }
   }
   @media (max-width: 480px) {
@@ -370,7 +367,6 @@
 </style>
 </head>
 <body>
-
   <div class="logo-bar">
     <div class="logo">MB</div>
   </div>
@@ -390,30 +386,29 @@
 
   <main class="container">
 
+    <!-- UPVC Windows & Doors Example -->
     <section class="section fade-section" id="upvc-windows-doors">
       <div class="section-title">UPVC Windows & Doors (15 Years Warranty)</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+1" alt="UPVC Window photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+2" alt="UPVC Window photo 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+3" alt="UPVC Window photo 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+4" alt="UPVC Window photo 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=UPVC+5" alt="UPVC Window photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x300?text=UPVC+1" alt="UPVC Window photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x300?text=UPVC+2" alt="UPVC Window photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x600?text=UPVC+3" alt="UPVC Window photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/350x350?text=UPVC+4" alt="UPVC Window photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/500x350?text=UPVC+5" alt="UPVC Window photo 5" /></div>
       </div>
       <div class="section-text">
         Premium UPVC windows and doors designed for durability, energy efficiency, and noise reduction. Choose from a variety of designs and finishes. Backed by a 15-year warranty for peace of mind.
       </div>
     </section>
 
-    <!-- Repeat the structure below for each of your other sections with their images and text -->
-
     <section class="section fade-section" id="false-ceiling">
       <div class="section-title">False Ceiling Designs</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+1" alt="False Ceiling photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+2" alt="False Ceiling photo 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+3" alt="False Ceiling photo 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+4" alt="False Ceiling photo 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Ceiling+5" alt="False Ceiling photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/420x250?text=Ceiling+1" alt="False Ceiling photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/540x300?text=Ceiling+2" alt="False Ceiling photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/380x220?text=Ceiling+3" alt="False Ceiling photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/330x420?text=Ceiling+4" alt="False Ceiling photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/520x260?text=Ceiling+5" alt="False Ceiling photo 5" /></div>
       </div>
       <div class="section-text">
         Transform your rooms with modern or classical false ceiling designs, tailored for homes & offices. Our solutions include POP, Gypsum, and modular ceilings crafted for elegance and enhanced acoustics.
@@ -423,11 +418,11 @@
     <section class="section fade-section" id="stainless-steel">
       <div class="section-title">Stainless Steel Grills, Railings, and Doors</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+1" alt="Stainless Steel Grill photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+2" alt="Stainless Steel Grill photo 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+3" alt="Stainless Steel Grill photo 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+4" alt="Stainless Steel Grill photo 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=SS+5" alt="Stainless Steel Grill photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/420x320?text=SS+1" alt="Stainless Steel Grill photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x200?text=SS+2" alt="Stainless Steel Grill photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/250x380?text=SS+3" alt="Stainless Steel Grill photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/420x320?text=SS+4" alt="Stainless Steel Grill photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/480x300?text=SS+5" alt="Stainless Steel Grill photo 5" /></div>
       </div>
       <div class="section-text">
         Secure your space with our high-quality stainless steel grills, railings, and main doors. Customized as per your requirements for both safety and style.
@@ -437,11 +432,11 @@
     <section class="section fade-section" id="readymade-doors">
       <div class="section-title">Readymade Doors</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+1" alt="Readymade Door photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+2" alt="Readymade Door photo 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+3" alt="Readymade Door photo 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+4" alt="Readymade Door photo 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Door+5" alt="Readymade Door photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/420x550?text=Door+1" alt="Readymade Door photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/320x400?text=Door+2" alt="Readymade Door photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x300?text=Door+3" alt="Readymade Door photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/420x320?text=Door+4" alt="Readymade Door photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/320x400?text=Door+5" alt="Readymade Door photo 5" /></div>
       </div>
       <div class="section-text">
         Choose from a wide range of premium readymade doors: wooden, flush, PVC, or steel. Perfect for quick installations with modern, stylish finishes.
@@ -451,11 +446,11 @@
     <section class="section fade-section" id="ladders-machines">
       <div class="section-title">Ladders & Machineries</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Ladder+1" alt="Ladder photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Ladder+2" alt="Ladder photo 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Ladder+3" alt="Ladder photo 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Machine+1" alt="Machinery photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Machine+2" alt="Machinery photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/320x480?text=Ladder+1" alt="Ladder photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/480x320?text=Ladder+2" alt="Ladder photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/320x320?text=Ladder+3" alt="Ladder photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/500x350?text=Machine+1" alt="Machinery photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/330x330?text=Machine+2" alt="Machinery photo 2" /></div>
       </div>
       <div class="section-text">
         Find aluminum ladders, kitchen tools, household and commercial machineries. Quality, utility and superior safety in every equipment.
@@ -465,11 +460,11 @@
     <section class="section fade-section" id="toughened-glass">
       <div class="section-title">Toughened Glass</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+1" alt="Toughened Glass photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/350x400?text=Glass+1" alt="Toughened Glass photo 1" /></div>
         <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+2" alt="Toughened Glass photo 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+3" alt="Toughened Glass photo 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+4" alt="Toughened Glass photo 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Glass+5" alt="Toughened Glass photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/450x340?text=Glass+3" alt="Toughened Glass photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/360x420?text=Glass+4" alt="Toughened Glass photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/390x350?text=Glass+5" alt="Toughened Glass photo 5" /></div>
       </div>
       <div class="section-text">
         Secure & stylish toughened glass solutions: doors, partitions, canopies, and more. Engineered for strength, clarity, and safety.
@@ -479,11 +474,11 @@
     <section class="section fade-section" id="structural-glazing-glass">
       <div class="section-title">Structural Glazing Glass</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Struct+Glass+1" alt="Structural Glazing Glass photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Struct+Glass+2" alt="Structural Glazing Glass photo 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Struct+Glass+3" alt="Structural Glazing Glass photo 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Struct+Glass+4" alt="Structural Glazing Glass photo 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Struct+Glass+5" alt="Structural Glazing Glass photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/330x350?text=Struct+Glass+1" alt="Structural Glazing Glass photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x380?text=Struct+Glass+2" alt="Structural Glazing Glass photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/430x400?text=Struct+Glass+3" alt="Structural Glazing Glass photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/475x300?text=Struct+Glass+4" alt="Structural Glazing Glass photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/440x320?text=Struct+Glass+5" alt="Structural Glazing Glass photo 5" /></div>
       </div>
       <div class="section-text">
         Advanced and aesthetic structural glazing for facades, showrooms, and commercial buildings. Weather-resistant, seamless glass installations for a dazzling finish.
@@ -493,11 +488,11 @@
     <section class="section fade-section" id="spider-fittings">
       <div class="section-title">Spider Fittings</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+1" alt="Spider fitting photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+2" alt="Spider fitting photo 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+3" alt="Spider fitting photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x340?text=Spider+1" alt="Spider fitting photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/320x360?text=Spider+2" alt="Spider fitting photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/405x315?text=Spider+3" alt="Spider fitting photo 3" /></div>
         <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+4" alt="Spider fitting photo 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Spider+5" alt="Spider fitting photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/390x290?text=Spider+5" alt="Spider fitting photo 5" /></div>
       </div>
       <div class="section-text">
         Modernize your glass architecture with our durable spider fittings—ideal for contemporary and frameless glass structures.
@@ -507,11 +502,11 @@
     <section class="section fade-section" id="louvers-panel">
       <div class="section-title">Louvers Panel</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+1" alt="Louvers panel photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+2" alt="Louvers panel photo 2" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+3" alt="Louvers panel photo 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+4" alt="Louvers panel photo 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Louvers+5" alt="Louvers panel photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/440x330?text=Louvers+1" alt="Louvers panel photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/350x290?text=Louvers+2" alt="Louvers panel photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/405x370?text=Louvers+3" alt="Louvers panel photo 3" /></div>
+        <div class="section-image"><img src="https://placehold.co/380x320?text=Louvers+4" alt="Louvers panel photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/400x340?text=Louvers+5" alt="Louvers panel photo 5" /></div>
       </div>
       <div class="section-text">
         Enhance ventilation & appearance with designer louvers panels. Suitable for exteriors and interiors, both functional and aesthetic.
@@ -521,17 +516,63 @@
     <section class="section fade-section" id="curtain-pipes">
       <div class="section-title">Curtain Pipes & Fittings</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+Pipe+1" alt="Curtain pipe photo 1" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+Pipe+2" alt="Curtain pipe photo 2" /></div>
+        <div class="section-image"><img src="https://placehold.co/600x325?text=Curtain+Pipe+1" alt="Curtain pipe photo 1" /></div>
+        <div class="section-image"><img src="https://placehold.co/320x420?text=Curtain+Pipe+2" alt="Curtain pipe photo 2" /></div>
         <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+Pipe+3" alt="Curtain pipe photo 3" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+Pipe+4" alt="Curtain pipe photo 4" /></div>
-        <div class="section-image"><img src="https://placehold.co/400x400?text=Curtain+Pipe+5" alt="Curtain pipe photo 5" /></div>
+        <div class="section-image"><img src="https://placehold.co/430x350?text=Curtain+Pipe+4" alt="Curtain pipe photo 4" /></div>
+        <div class="section-image"><img src="https://placehold.co/385x400?text=Curtain+Pipe+5" alt="Curtain pipe photo 5" /></div>
       </div>
       <div class="section-text">
         Complete your interior with stylish curtain pipes, rods, and all necessary fittings—easy to install and made to last.
       </div>
     </section>
 
+    <section class="why-choose-us fade-section">
+      <div class="why-choose-us-title">Why Choose Us</div>
+      <ul class="why-choose-us-list">
+        <li>Over 15 years of trusted experience in Lower Assam and Bongaigaon.</li>
+        <li>Wide variety of high-quality aluminium and hardware products.</li>
+        <li>Durability and reliability guaranteed with all products.</li>
+        <li>Expert design and installation for interior solutions.</li>
+        <li>15 years warranty on UPVC windows and doors.</li>
+        <li>Customer-first approach ensuring satisfaction and support.</li>
+        <li>Competitive pricing without compromising quality.</li>
+        <li>Timely delivery and professional service.</li>
+        <li>Customizable solutions tailored to your needs.</li>
+        <li>Dedicated after-sales service and maintenance support.</li>
+      </ul>
+    </section>
+
+    <section class="testimonials-section fade-section">
+      <div class="testimonials-title">What Our Customers Say</div>
+      <div class="testimonials-list">
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">A</div>
+          <div class="testimonial-text">"Had UPVC windows fitted for my home – very professional and excellent finish. Highly recommended!"</div>
+          <div class="testimonial-name">Anita Das, Bongaigaon</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">R</div>
+          <div class="testimonial-text">"Modern false ceiling done for my clinic. Superb designs and timely work. Thank you for your service!"</div>
+          <div class="testimonial-name">Rahul Bora, Kokrajhar</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">S</div>
+          <div class="testimonial-text">"Purchased ladders and doors for my business—best products, reasonable prices, genuine shop."</div>
+          <div class="testimonial-name">Swapan Paul, Bongaigaon</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">M</div>
+          <div class="testimonial-text">"Staff are very helpful, explained all options before I finalized my railing and grill. Great job!"</div>
+          <div class="testimonial-name">Md. Karim, Chirang</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">J</div>
+          <div class="testimonial-text">"Fantastic experience! Got toughened glass and louvers panels for my office. Quality and finish is top."</div>
+          <div class="testimonial-name">Jenny Talukdar, Barpeta</div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -563,11 +604,9 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <svg fill="white" width="36" height="36" viewBox="0 0 24 24"><path d="M12 2C6.476 2 2 6.478 2 12c0 1.948.57 3.774 1.554 5.314L2 22l4.814-1.546C8.227 21.43 10.053 22 12 22c5.523 0 10-4.478 10-10S17.523 2 12 2zm.006 17c-1.658 0-3.287-.446-4.664-1.284l-.332-.195-2.857.917.943-2.836-.215-.348C4.45 13.287 4 11.666 4 9.995 4 6.144 7.149 3 12 3c4.852 0 8 3.144 8 6.995 0 1.671-.448 3.292-1.144 4.41l-.216.348.944 2.835-2.858-.917-.332.195C15.292 18.554 13.662 19 12.006 19zm4.073-5.659c-.207-.104-1.225-.605-1.414-.674-.189-.07-.328-.104-.467.103-.14.207-.538.674-.66.812-.121.14-.243.157-.45.053-.207-.104-.874-.322-1.666-1.025-.616-.547-1.032-1.223-1.154-1.429-.121-.207-.013-.318.09-.422.092-.092.207-.241.311-.361.104-.121.139-.207.207-.346.07-.14.035-.249-.018-.353-.053-.104-.467-1.128-.641-1.545-.168-.395-.34-.342-.466-.349l-.399-.008c-.129 0-.335.048-.511.232-.176.184-.67.673-.67 1.641 0 .968.687 1.904.783 2.038.104.14 1.353 2.066 3.277 2.814.459.158.816.252 1.095.322.46.11.88.095 1.21.058.372-.042 1.225-.499 1.397-.98.173-.482.173-.896.121-.98-.052-.085-.189-.14-.396-.244z"/></svg>
   </a>
-
   <script>
     window.addEventListener('DOMContentLoaded',function(){
       document.querySelectorAll('.fade-section').forEach(function(el,i){
