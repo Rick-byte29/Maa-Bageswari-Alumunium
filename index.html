@@ -8,83 +8,67 @@
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
   html { box-sizing: border-box; }
   *, *:before, *:after { box-sizing: inherit; }
-
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #f3f6fb;
-    color: #222;
-  }
-
-  .container { width:95%; max-width: 1200px; margin: 0 auto; }
-
-  .logo-bar {
-    width:100%; background: #213f60; padding:38px 0 26px 0; display:flex; justify-content:center; align-items:center;
-  }
-  .logo {
-    width:130px; height:130px; border-radius:36px; background:#eee;
-    box-shadow: 0 7px 38px #3d4f6080; display:flex;align-items:center;justify-content:center;
-    font-weight:900; font-size:3.6rem; letter-spacing:2.5px; color:#213f60;
-  }
-
-  .sticky-bar {
-    width: 100%;
-    background: linear-gradient(90deg, #022c43 82%, #fed353 130%);
-    position: sticky; top: 0; left: 0;
-    z-index: 1005;
-    box-shadow: 0 2px 12px #02182688;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 56px;
-  }
-  .sticky-bar-content {
-    max-width:980px; margin:0 auto; display:flex; justify-content: center; align-items: center; padding: 0 3vw; width:100%;
-  }
-  .sticky-bar-content button {
-    padding: 12px 38px;
-    background: #fedb5a;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: #1c2a3b;
-    cursor: pointer;
-    box-shadow: 0 0 10px #febf2470;
+  body { margin:0; padding:0; font-family:'Montserrat',sans-serif; background:#f3f6fb; color:#222; }
+  .container { width:95%; max-width:1200px; margin:0 auto; }
+  .logo-bar { width:100%; background:#213f60; padding:38px 0 26px 0; display:flex; justify-content:center; align-items:center;}
+  .logo { width:130px; height:130px; border-radius:36px; background:#eee; box-shadow:0 7px 38px #3d4f6080; display:flex;align-items:center;justify-content:center; font-weight:900; font-size:3.6rem; letter-spacing:2.5px; color:#213f60;}
+  .sticky-bar { width:100%; background:linear-gradient(90deg, #022c43 82%, #fed353 130%); position:sticky; top:0; left:0; z-index:1005; box-shadow:0 2px 12px #02182688; display:flex; justify-content:center; align-items:center; min-height:56px;}
+  .sticky-bar-content { max-width:980px; margin:0 auto; display:flex; justify-content:center; align-items:center; padding:0 3vw; width:100%;}
+  .sticky-bar-content button { padding:12px 38px; background:#fedb5a; border:none; border-radius:30px; font-size:1.15rem; font-weight:800; color:#1c2a3b; cursor:pointer; box-shadow:0 0 10px #febf2470; position:relative; animation:pulse 1.4s infinite; transition:background 0.3s, color 0.3s, transform 0.2s; white-space:nowrap;}
+  .sticky-bar-content button:hover { background:#fff7db; color:#b79900; box-shadow:0 0 19px #fedb5a;}
+  @keyframes pulse {0%,100%{box-shadow:0 0 0 0 rgba(254,219,90,.7);}50%{box-shadow:0 0 14px 8px rgba(254,219,90,.29);}}
+  header .titles { background:#213f60; color:#fff; padding-bottom:21px; text-align:center;}
+  .shop-title { margin:35px 0 8px 0; font-size:2.11rem; letter-spacing:2px; font-weight:bold; display:inline-block; color:#fff; animation:animate3DTitle 1.5s cubic-bezier(.4,0,.2,1) 0s both;}
+  .hook-line { display:inline-block; font-size:1.12rem; font-weight:500; color:#fed353; text-shadow:1px 1px 4px #0003; animation:animate3DSubtitle 1.25s cubic-bezier(.4,0,.2,1) .45s both;}
+  /* Unique About Us Styles */
+  .about-main {
+    margin:36px 0 34px 0;
+    padding:38px 6vw 28px 6vw;
+    background:linear-gradient(120deg, #fbeee6 40%, #d6e9fa 100%);
+    border-radius: 26px;
+    box-shadow: 0 8px 36px #c5caf633, 0 0 0 #d0f1fc;
+    border: 2.7px solid #fed353cc;
+    text-align: center;
     position: relative;
-    animation: pulse 1.4s infinite;
-    transition: background 0.3s, color 0.3s, transform 0.2s;
-    white-space: nowrap;
+    overflow: hidden;
+    cursor:pointer;
+    transition: box-shadow 0.16s, transform 0.16s;
+    z-index:1;
   }
-  .sticky-bar-content button:hover {
-    background:#fff7db; color:#b79900; box-shadow:0 0 19px #fedb5a;
+  .about-main:hover {
+    box-shadow:0 0 0 #fff,0 0 36px #fed35399,0 8px 46px #26c6da08;
+    transform:scale(1.018);
   }
-  @keyframes pulse {
-    0%,100%{box-shadow:0 0 0 0 rgba(254,219,90,.7);}
-    50%{box-shadow:0 0 14px 8px rgba(254,219,90,.29);}
+  .about-headline {
+    font-size:2.0rem;
+    font-weight:800;
+    color:#22375d;
+    letter-spacing:.13em;
+    margin-bottom:15px;
+    display:inline-block;
+    background: linear-gradient(90deg, #fed353, #39bab7 60%, #22375d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate3DTitle 1.3s cubic-bezier(.4,0,.2,1) .4s both;
+  }
+  .about-lead {
+    font-size:1.17rem;
+    color:#2a3a46;
+    margin:0 auto 19px auto;
+    max-width:710px;
+    font-weight: 500;
+    line-height:1.54;
+    animation: animate3DSubtitle 1.15s cubic-bezier(.4,0,.2,1) 0.8s both;
+  }
+  .about-decor {
+    position:absolute; top:10px; left:3vw; width:36px; height:36px; background: linear-gradient(135deg,#fed35388 10%, #39bab777 80%); border-radius:50%; filter:blur(4px);
+  }
+  .about-decor2 {
+    position:absolute; bottom:10px; right:5vw; width:29px; height:29px; background: linear-gradient(135deg,#39bab733 10%, #fed35377 90%); border-radius:50%; filter:blur(6px);
   }
 
-  header .titles {
-    background:#213f60; color:#fff; padding-bottom:21px; text-align:center;
-  }
-  .shop-title {
-    margin: 35px 0 8px 0; font-size:2.11rem; letter-spacing:2px; font-weight:bold; display:inline-block;
-    color:#fff; animation: animate3DTitle 1.5s cubic-bezier(.4,0,.2,1) 0s both;
-  }
-  .hook-line {
-    display:inline-block; font-size:1.12rem; font-weight:500; color:#fed353;
-    text-shadow:1px 1px 4px #0003; animation: animate3DSubtitle 1.25s cubic-bezier(.4,0,.2,1) .45s both;
-  }
-  @keyframes animate3DTitle {
-    0% {opacity:0;transform:rotateY(59deg) translateZ(-100px) scale(0.88);}
-    70% {opacity:1;transform:rotateY(-8deg) translateZ(24px) scale(1.04);}
-    100% {opacity:1;transform:none;}
-  }
-  @keyframes animate3DSubtitle {
-    0%{opacity:0;transform:rotateX(62deg) translateY(-28px) scale(.93);}
-    80%{opacity:1;transform:rotateX(-8deg) translateY(5px);}
-    100%{opacity:1;transform:none;}
-  }
+  @keyframes animate3DTitle { 0% {opacity:0;transform:rotateY(59deg) translateZ(-100px) scale(0.88);}70% {opacity:1;transform:rotateY(-8deg) translateZ(24px) scale(1.04);}100% {opacity:1;transform:none;} }
+  @keyframes animate3DSubtitle { 0%{opacity:0;transform:rotateX(62deg) translateY(-28px) scale(.93);}80%{opacity:1;transform:rotateX(-8deg) translateY(5px);}100%{opacity:1;transform:none;} }
 
   .section, .why-choose-us, .testimonials-section {
     background: #fff; border-radius: 18px;
@@ -124,10 +108,7 @@
     margin: 0;
   }
 
-  .why-choose-us {
-    padding: 18px 4vw;
-    margin: 26px 0 21px;
-  }
+  .why-choose-us, .testimonials-section {margin-top:30px;}
   .why-choose-us-title {
     font-size: 1.15rem;
     font-weight: 700;
@@ -145,9 +126,6 @@
     padding-left: 6px;
   }
 
-  .testimonials-section {
-    padding-top: 8px;
-  }
   .testimonials-title {
     font-size: 1.18rem;
     font-weight: 700;
@@ -273,7 +251,6 @@
     width: 22px;
     height: 22px;
   }
-
   .map-link {
     color: #ffd54f;
     font-weight: bold;
@@ -327,6 +304,15 @@
     .sticky-bar-content button {
       padding: 11px 14px;
     }
+    .about-main {padding: 28px 2vw 20px 2vw;}
+    .about-headline{font-size:1.16rem;}
+    .about-lead{font-size:.99rem;}
+    .about-decor,.about-decor2{display:none;}
+    .about-main{margin:19px 0 18px 0;}
+    .about-decor{left:0;}
+    .about-decor2{right:0;}
+    .about-main:hover{transform:scale(1.013);}
+    .section-gallery-row{gap:9px;}
     .about-section, .contact-section {
       flex-basis: 100%;
     }
@@ -383,10 +369,21 @@
       <div class="hook-line">Redefining Your Spaces with Lasting Craftsmanship | 15+ Years in Bongaigaon & Lower Assam</div>
     </div>
   </header>
+  
+  <!-- UNIQUE, ANIMATED About Us MAIN section -->
+  <div class="about-main fade-section">
+    <span class="about-decor"></span>
+    <span class="about-decor2"></span>
+    <div class="about-headline">About Us</div>
+    <div class="about-lead">
+      For over 15 years, Maa Bageswari Aluminium House has been the trusted destination in Bongaigaon and Lower Assam for aluminium fabrication, hardware, and bespoke interior solutions. Our commitment to quality, design, and service transforms spaces—residences, offices, and commercial venues—into places of lasting beauty and function. Discover the difference built on a legacy of integrity and innovation.
+    </div>
+  </div>
 
   <main class="container">
 
-    <!-- UPVC Windows & Doors Example -->
+    <!-- All image/text sections as previous -->
+    <!-- ... (keep all the product/service/image sections and everything else as in previous answer) ... -->
     <section class="section fade-section" id="upvc-windows-doors">
       <div class="section-title">UPVC Windows & Doors (15 Years Warranty)</div>
       <div class="section-gallery-row">
@@ -400,7 +397,7 @@
         Premium UPVC windows and doors designed for durability, energy efficiency, and noise reduction. Choose from a variety of designs and finishes. Backed by a 15-year warranty for peace of mind.
       </div>
     </section>
-
+    <!-- ... all other image-based sections (False Ceiling, Stainless Steel, etc.) ... -->
     <section class="section fade-section" id="false-ceiling">
       <div class="section-title">False Ceiling Designs</div>
       <div class="section-gallery-row">
@@ -414,7 +411,6 @@
         Transform your rooms with modern or classical false ceiling designs, tailored for homes & offices. Our solutions include POP, Gypsum, and modular ceilings crafted for elegance and enhanced acoustics.
       </div>
     </section>
-
     <section class="section fade-section" id="stainless-steel">
       <div class="section-title">Stainless Steel Grills, Railings, and Doors</div>
       <div class="section-gallery-row">
@@ -428,7 +424,6 @@
         Secure your space with our high-quality stainless steel grills, railings, and main doors. Customized as per your requirements for both safety and style.
       </div>
     </section>
-
     <section class="section fade-section" id="readymade-doors">
       <div class="section-title">Readymade Doors</div>
       <div class="section-gallery-row">
@@ -442,7 +437,6 @@
         Choose from a wide range of premium readymade doors: wooden, flush, PVC, or steel. Perfect for quick installations with modern, stylish finishes.
       </div>
     </section>
-
     <section class="section fade-section" id="ladders-machines">
       <div class="section-title">Ladders & Machineries</div>
       <div class="section-gallery-row">
@@ -456,7 +450,6 @@
         Find aluminum ladders, kitchen tools, household and commercial machineries. Quality, utility and superior safety in every equipment.
       </div>
     </section>
-
     <section class="section fade-section" id="toughened-glass">
       <div class="section-title">Toughened Glass</div>
       <div class="section-gallery-row">
@@ -470,7 +463,6 @@
         Secure & stylish toughened glass solutions: doors, partitions, canopies, and more. Engineered for strength, clarity, and safety.
       </div>
     </section>
-
     <section class="section fade-section" id="structural-glazing-glass">
       <div class="section-title">Structural Glazing Glass</div>
       <div class="section-gallery-row">
@@ -484,7 +476,6 @@
         Advanced and aesthetic structural glazing for facades, showrooms, and commercial buildings. Weather-resistant, seamless glass installations for a dazzling finish.
       </div>
     </section>
-
     <section class="section fade-section" id="spider-fittings">
       <div class="section-title">Spider Fittings</div>
       <div class="section-gallery-row">
@@ -498,7 +489,6 @@
         Modernize your glass architecture with our durable spider fittings—ideal for contemporary and frameless glass structures.
       </div>
     </section>
-
     <section class="section fade-section" id="louvers-panel">
       <div class="section-title">Louvers Panel</div>
       <div class="section-gallery-row">
@@ -512,7 +502,6 @@
         Enhance ventilation & appearance with designer louvers panels. Suitable for exteriors and interiors, both functional and aesthetic.
       </div>
     </section>
-
     <section class="section fade-section" id="curtain-pipes">
       <div class="section-title">Curtain Pipes & Fittings</div>
       <div class="section-gallery-row">
