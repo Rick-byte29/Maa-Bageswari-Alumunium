@@ -54,7 +54,10 @@
     color: #b79900;
     box-shadow: 0 0 19px #fedb5a;
   }
-  @keyframes pulse {0%,100%{box-shadow:0 0 0 0 rgba(254,219,90,.7);}50%{box-shadow:0 0 14px 8px rgba(254,219,90,.29);}}
+  @keyframes pulse {
+    0%,100%{box-shadow:0 0 0 0 rgba(254,219,90,.7);}
+    50%{box-shadow:0 0 14px 8px rgba(254,219,90,.29);}
+  }
 
   /* New header flex layout for logo and titles */
   .header-flex {
@@ -126,7 +129,6 @@
   @keyframes animate3DTitle { 0% {opacity:0;transform:rotateY(59deg) translateZ(-100px) scale(0.88);}70% {opacity:1;transform:rotateY(-8deg) translateZ(24px) scale(1.04);}100% {opacity:1;transform:none;} }
   @keyframes animate3DSubtitle { 0%{opacity:0;transform:rotateX(62deg) translateY(-28px) scale(.93);}80%{opacity:1;transform:rotateX(-8deg) translateY(5px);}100%{opacity:1;transform:none;} }
 
-  /* ... the existing about, section, footer etc. styles ... */
   .about-main {
     margin:36px 0 34px 0;
     padding:38px 6vw 28px 6vw;
@@ -375,6 +377,15 @@
   .whatsapp-float:hover {
     background: #18b45b;
   }
+  /* --- Pulsating TradingX effect on all fade-section.visible (adds modern animated pop feel) --- */
+  @keyframes pulseTradingX {
+    0% {opacity:0; transform:scale(0.97) translateY(50px);}
+    45% {opacity:1; transform:scale(1.02) translateY(-3px);}
+    65% { opacity:1;transform:scale(0.995) translateY(1.5px);}
+    100% {opacity:1;transform: none;}
+  }
+  .fade-section {opacity:0;}
+  .fade-section.visible {animation: pulseTradingX 0.82s cubic-bezier(.34,1.56,.64,1) both;}
   @media (max-width: 900px){
     .section-image { max-width: 80vw; }
     .header-flex{flex-direction:column;align-items:flex-start;}
@@ -427,7 +438,6 @@
     </div>
   </div>
   <main class="container">
-    <!-- All image/text sections as previous -->
    <section class="section fade-section" id="upvc-windows-doors">
   <div class="section-title">UPVC Windows & Doors (15 Years Warranty)</div>
   <div class="section-gallery-row">
@@ -577,7 +587,6 @@
   </button>
 </div>
 
-
     <section class="why-choose-us fade-section">
       <div class="why-choose-us-title">Why Choose Us</div>
       <ul class="why-choose-us-list">
@@ -650,11 +659,12 @@
     <svg fill="white" width="36" height="36" viewBox="0 0 24 24"><path d="M12 2C6.476 2 2 6.478 2 12c0 1.948.57 3.774 1.554 5.314L2 22l4.814-1.546C8.227 21.43 10.053 22 12 22c5.523 0 10-4.478 10-10S17.523 2 12 2zm.006 17c-1.658 0-3.287-.446-4.664-1.284l-.332-.195-2.857.917.943-2.836-.215-.348C4.45 13.287 4 11.666 4 9.995 4 6.144 7.149 3 12 3c4.852 0 8 3.144 8 6.995 0 1.671-.448 3.292-1.144 4.41l-.216.348.944 2.835-2.858-.917-.332.195C15.292 18.554 13.662 19 12.006 19zm4.073-5.659c-.207-.104-1.225-.605-1.414-.674-.189-.07-.328-.104-.467.103-.14.207-.538.674-.66.812-.121.14-.243.157-.45.053-.207-.104-.874-.322-1.666-1.025-.616-.547-1.032-1.223-1.154-1.429-.121-.207-.013-.318.09-.422.092-.092.207-.241.311-.361.104-.121.139-.207.207-.346.07-.14.035-.249-.018-.353-.053-.104-.467-1.128-.641-1.545-.168-.395-.34-.342-.466-.349l-.399-.008c-.129 0-.335.048-.511.232-.176.184-.67.673-.67 1.641 0 .968.687 1.904.783 2.038.104.14 1.353 2.066 3.277 2.814.459.158.816.252 1.095.322.46.11.88.095 1.21.058.372-.042 1.225-.499 1.397-.98.173-.482.173-.896.121-.98-.052-.085-.189-.14-.396-.244z"/></svg>
   </a>
   <script>
+    // Animate all fade-section classes in staggered PulseTradingX style
     window.addEventListener('DOMContentLoaded',function(){
       document.querySelectorAll('.fade-section').forEach(function(el,i){
         setTimeout(function(){
           el.classList.add('visible');
-        }, 180+i*90);
+        }, 150+i*90);
       });
     });
   </script>
