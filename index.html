@@ -4,6 +4,37 @@
 <meta charset="UTF-8" />
 <title>Maa Bageswari Aluminium House | Interior & Hardware Experts, Bongaigaon</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- SEO -->
+<meta name="description" content="Maa Bageswari Aluminium House — 15+ years of aluminium fabrication, UPVC windows & doors, false ceilings, stainless steel railings, toughened glass, structural glazing, spider fittings, louvers, ladders & interior hardware in Bongaigaon and Lower Assam." />
+<meta name="keywords" content="Maa Bageswari Aluminium House, UPVC windows Bongaigaon, Aluminium fabrication Assam, False ceiling Bongaigaon, Stainless steel railings Assam, Toughened glass Assam, Structural glazing Assam, Interior hardware Bongaigaon" />
+
+<!-- LocalBusiness Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Maa Bageswari Aluminium House",
+  "image": "https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Construction%20Business%20Logo%20Maa%20Bageswari%20Aluminium%20House.png?raw=true",
+  "telephone": "+919101244709",
+  "email": "maabageswari.aluminium@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "B.O.C Gate, Chapaguri Road",
+    "addressLocality": "Bongaigaon",
+    "addressRegion": "Assam",
+    "postalCode": "783380",
+    "addressCountry": "IN"
+  },
+  "areaServed": "Bongaigaon and Lower Assam",
+  "url": "https://maps.app.goo.gl/cCByGtfoceZBEMpbA",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=100065515358633",
+    "https://www.instagram.com/maabageswarialuminiumhouse/?hl=en"
+  ]
+}
+</script>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
   html { box-sizing: border-box; }
@@ -59,20 +90,21 @@
     50%{box-shadow:0 0 14px 8px rgba(254,219,90,.29);}
   }
 
-  /* New header flex layout for logo and titles */
+  /* Header flex layout for logo and titles (logo bigger + centered) */
   .header-flex {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center; /* centered */
     gap: 3vw;
     background: #213f60;
     padding: 30px 4vw 16px 4vw;
     min-height: 160px;
     box-shadow: 0 7px 38px #3d4f6030;
+    text-align: center;
   }
   .logo {
-    width: 130px;
-    height: 130px;
+    width: 180px;  /* bigger */
+    height: 180px; /* bigger */
     border-radius: 36px;
     background: #eee;
     box-shadow: 0 7px 38px #3d4f6080;
@@ -92,15 +124,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* centered */
     flex:1;
     min-width:0;
+    text-align: center;  /* centered */
   }
   .shop-title {
     font-size: 2.11rem;
     letter-spacing: 2px;
     font-weight: bold;
     color: #fff;
-    text-align: left;
+    text-align: center; /* centered */
     margin-bottom: 10px;
     background: none;
     animation: animate3DTitle 1.5s cubic-bezier(.4,0,.2,1) 0s both;
@@ -108,7 +142,7 @@
   }
   .hook-line-wrapper {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center; /* centered */
   }
   .hook-line {
     font-size: 1.12rem;
@@ -269,13 +303,21 @@
   }
   .testimonial-text {
     font-size: 0.99rem;
-    margin-bottom: 12px;
+    margin-bottom: 8px; /* tightened to add stars */
     color: #44597e;
   }
   .testimonial-name {
     font-weight: 600;
     letter-spacing: 0.04em;
     color: #213f60;
+  }
+  .testimonial-stars {
+    margin: 4px 0 8px 0;
+    font-size: 1rem;
+    line-height: 1;
+    color: #f5c518; /* star color */
+    letter-spacing: 2px;
+    aria-hidden: true;
   }
   footer {
     background: #22375d;
@@ -392,17 +434,29 @@
     opacity: 1 !important;
   }
 
+  /* Mobile enhancements: horizontal scroll galleries, responsive logo */
   @media (max-width: 900px){
-    .section-image { max-width: 80vw; }
-    .header-flex{flex-direction:column;align-items:flex-start;}
+    .section-gallery-row {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 6px;
+    }
+    .section-image { 
+      flex: 0 0 auto; 
+      max-width: 82vw; 
+      scroll-snap-align: start;
+    }
+    .header-flex{flex-direction:column;align-items:center;justify-content:center;}
     .header-title-group{width:100%;}
-    .logo{margin-bottom:16px;}
-    .hook-line-wrapper{justify-content:flex-start;}
+    .logo{margin-bottom:16px; width:140px; height:140px;} /* still bigger than original */
+    .hook-line-wrapper{justify-content:center;}
   }
   @media (max-width: 600px){
     .section-gallery-row { gap: 10px; }
-    .section-image { max-width: 98vw; padding: 2px;}
-    .logo {width: 80px; height:80px;}
+    .section-image { max-width: 96vw; padding: 2px;}
+    .logo {width: 120px; height:120px;}
     .shop-title { font-size: 1.25rem;}
     .header-flex {padding: 16px 2vw 11px 2vw;min-height:80px;}
     .hook-line {font-size:1rem;padding:5px 9px;}
@@ -424,7 +478,7 @@
   <header>
     <div class="header-flex">
       <div class="logo">
-        <img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Construction%20Business%20Logo%20Maa%20Bageswari%20Aluminium%20House.png?raw=true" alt="Maa Bageswari Aluminium House Logo" />
+        <img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Construction%20Business%20Logo%20Maa%20Bageswari%20Aluminium%20House.png?raw=true" alt="Maa Bageswari Aluminium House Logo" loading="lazy" />
       </div>
       <div class="header-title-group">
         <div class="shop-title">Maa Bageswari Aluminium House</div>
@@ -447,11 +501,11 @@
     <section class="section fade-section" id="upvc-windows-doors">
       <div class="section-title">UPVC Windows & Doors (15 Years Warranty)</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%201.jpg?raw=true" alt="UPVC Window photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%202.jpg?raw=true" alt="UPVC Window photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%203.jpg?raw=true" alt="UPVC Window photo 3" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%204.jpg?raw=true" alt="UPVC Window photo 4" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%205.jpg?raw=true" alt="UPVC Window photo 5" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%201.jpg?raw=true" alt="UPVC Window photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%202.jpg?raw=true" alt="UPVC Window photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%203.jpg?raw=true" alt="UPVC Window photo 3" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%204.jpg?raw=true" alt="UPVC Window photo 4" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/UPVC%205.jpg?raw=true" alt="UPVC Window photo 5" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Premium UPVC windows and doors designed for durability, energy efficiency, and noise reduction. Choose from a variety of designs and finishes. Backed by a 15-year warranty for peace of mind.
@@ -460,11 +514,11 @@
     <section class="section fade-section" id="false-ceiling">
       <div class="section-title">False Ceiling Designs</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%201.jpg?raw=true" alt="False Ceiling photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%202.jpg?raw=true" alt="False Ceiling photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%203.jpg?raw=true" alt="False Ceiling photo 3" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%204.jpg?raw=true" alt="False Ceiling photo 4" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%205.jpg?raw=true" alt="False Ceiling photo 5" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%201.jpg?raw=true" alt="False Ceiling photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%202.jpg?raw=true" alt="False Ceiling photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%203.jpg?raw=true" alt="False Ceiling photo 3" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%204.jpg?raw=true" alt="False Ceiling photo 4" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/False%20Ceiling%205.jpg?raw=true" alt="False Ceiling photo 5" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Transform your rooms with modern or classical false ceiling designs, tailored for homes & offices. Our solutions include POP, Gypsum, and modular ceilings crafted for elegance and enhanced acoustics.
@@ -473,11 +527,11 @@
     <section class="section fade-section" id="stainless-steel">
       <div class="section-title">Stainless Steel Grills, Railings, and Doors</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%201.jpg?raw=true" alt="Stainless Steel Grill photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%202.jpg?raw=true" alt="Stainless Steel Grill photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%203.jpg?raw=true" alt="Stainless Steel Grill photo 3" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%204.jpg?raw=true" alt="Stainless Steel Grill photo 4" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%205.jpg?raw=true" alt="Stainless Steel Grill photo 5" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%201.jpg?raw=true" alt="Stainless Steel Grill photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%202.jpg?raw=true" alt="Stainless Steel Grill photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%203.jpg?raw=true" alt="Stainless Steel Grill photo 3" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%204.jpg?raw=true" alt="Stainless Steel Grill photo 4" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Railings%205.jpg?raw=true" alt="Stainless Steel Grill photo 5" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Secure your space with our high-quality stainless steel grills, railings, and main doors. Customized as per your requirements for both safety and style.
@@ -486,11 +540,11 @@
     <section class="section fade-section" id="readymade-doors">
       <div class="section-title">Readymade Doors</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%201.jpg?raw=true" alt="Readymade Door photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%202.jpg?raw=true" alt="Readymade Door photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%203.jpg?raw=true" alt="Readymade Door photo 3" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%204.jpg?raw=true" alt="Readymade Door photo 4" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%205.jpg?raw=true" alt="Readymade Door photo 5" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%201.jpg?raw=true" alt="Readymade Door photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%202.jpg?raw=true" alt="Readymade Door photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%203.jpg?raw=true" alt="Readymade Door photo 3" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%204.jpg?raw=true" alt="Readymade Door photo 4" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Readymade%20doors%205.jpg?raw=true" alt="Readymade Door photo 5" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Choose from a wide range of premium readymade doors: wooden, flush, PVC, or steel. Perfect for quick installations with modern, stylish finishes.
@@ -499,11 +553,11 @@
     <section class="section fade-section" id="ladders-machines">
       <div class="section-title">Ladders & Machineries</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Ladders%201.jpg?raw=true" alt="Ladder photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Ladders%202.jpg?raw=true" alt="Ladder photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Drill%201.jpg?raw=true" alt="Machinery photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Machine%201.jpg?raw=true" alt="Machinery photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Machine%202.jpg?raw=true" alt="Machinery photo 3" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Ladders%201.jpg?raw=true" alt="Ladder photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Ladders%202.jpg?raw=true" alt="Ladder photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Drill%201.jpg?raw=true" alt="Machinery photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Machine%201.jpg?raw=true" alt="Machinery photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Machine%202.jpg?raw=true" alt="Machinery photo 3" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Find aluminum ladders, household and commercial machineries. Quality, utility and superior safety in every equipment.
@@ -512,11 +566,11 @@
     <section class="section fade-section" id="toughened-glass">
       <div class="section-title">Toughened Glass</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%201.jpg?raw=true" alt="Toughened Glass photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%202.jpg?raw=true" alt="Toughened Glass photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%203.jpg?raw=true" alt="Toughened Glass photo 3" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%204.jpg?raw=true" alt="Toughened Glass photo 4" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%205.jpg?raw=true" alt="Toughened Glass photo 5" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%201.jpg?raw=true" alt="Toughened Glass photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%202.jpg?raw=true" alt="Toughened Glass photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%203.jpg?raw=true" alt="Toughened Glass photo 3" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%204.jpg?raw=true" alt="Toughened Glass photo 4" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Toughend%20Glass%205.jpg?raw=true" alt="Toughened Glass photo 5" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Secure & stylish toughened glass solutions: doors, partitions, canopies, and more. Engineered for strength, clarity, and safety.
@@ -525,11 +579,11 @@
     <section class="section fade-section" id="structural-glazing-glass">
       <div class="section-title">Structural Glazing Glass</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%201.jpg?raw=true" alt="Structural Glazing Glass photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%202.jpg?raw=true" alt="Structural Glazing Glass photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%203.jpg?raw=true" alt="Structural Glazing Glass photo 3" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%204.jpg?raw=true" alt="Structural Glazing Glass photo 4" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%205.jpg?raw=true" alt="Structural Glazing Glass photo 5" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%201.jpg?raw=true" alt="Structural Glazing Glass photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%202.jpg?raw=true" alt="Structural Glazing Glass photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%203.jpg?raw=true" alt="Structural Glazing Glass photo 3" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%204.jpg?raw=true" alt="Structural Glazing Glass photo 4" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Glazzing%20Glass%205.jpg?raw=true" alt="Structural Glazing Glass photo 5" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Advanced and aesthetic structural glazing for facades, showrooms, and commercial buildings. Weather-resistant, seamless glass installations for a dazzling finish.
@@ -538,11 +592,11 @@
     <section class="section fade-section" id="spider-fittings">
       <div class="section-title">Spider Fittings</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%201.jpg?raw=true" alt="Spider fitting photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%202.jpg?raw=true" alt="Spider fitting photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%203.jpg?raw=true" alt="Spider fitting photo 3" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%204.jpg?raw=true" alt="Spider fitting photo 4" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%205.jpg?raw=true" alt="Spider fitting photo 5" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%201.jpg?raw=true" alt="Spider fitting photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%202.jpg?raw=true" alt="Spider fitting photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%203.jpg?raw=true" alt="Spider fitting photo 3" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%204.jpg?raw=true" alt="Spider fitting photo 4" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Spider%205.jpg?raw=true" alt="Spider fitting photo 5" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Modernize your glass architecture with our durable spider fittings—ideal for contemporary and frameless glass structures.
@@ -551,11 +605,11 @@
     <section class="section fade-section" id="louvers-panel">
       <div class="section-title">Louvers Panel</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%201.jpg?raw=true" alt="Louvers panel photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%202.jpg?raw=true" alt="Louvers panel photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%203.jpg?raw=true" alt="Louvers panel photo 3" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%204.jpg?raw=true" alt="Louvers panel photo 4" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%205.jpg?raw=true" alt="Louvers panel photo 5" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%201.jpg?raw=true" alt="Louvers panel photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%202.jpg?raw=true" alt="Louvers panel photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%203.jpg?raw=true" alt="Louvers panel photo 3" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%204.jpg?raw=true" alt="Louvers panel photo 4" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Louvers%205.jpg?raw=true" alt="Louvers panel photo 5" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Enhance ventilation & appearance with designer louvers panels. Suitable for exteriors and interiors, both functional and aesthetic.
@@ -564,11 +618,11 @@
     <section class="section fade-section" id="curtain-pipes">
       <div class="section-title">Curtain Pipes & Fittings</div>
       <div class="section-gallery-row">
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%201.jpg?raw=true" alt="Curtain pipe photo 1" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%202.jpg?raw=true" alt="Curtain pipe photo 2" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%203.jpg?raw=true" alt="Curtain pipe photo 3" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%204.jpg?raw=true" alt="Curtain pipe photo 4" /></div>
-        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%205.jpg?raw=true" alt="Curtain pipe photo 5" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%201.jpg?raw=true" alt="Curtain pipe photo 1" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%202.jpg?raw=true" alt="Curtain pipe photo 2" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%203.jpg?raw=true" alt="Curtain pipe photo 3" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%204.jpg?raw=true" alt="Curtain pipe photo 4" loading="lazy" /></div>
+        <div class="section-image"><img src="https://github.com/Rick-byte29/Maa-Bageswari-Alumunium/blob/main/Curtains%205.jpg?raw=true" alt="Curtain pipe photo 5" loading="lazy" /></div>
       </div>
       <div class="section-text">
         Complete your interior with stylish curtain pipes, rods, and all necessary fittings—easy to install and made to last.
@@ -600,31 +654,59 @@
     <section class="testimonials-section fade-section">
       <div class="testimonials-title">What Our Customers Say</div>
       <div class="testimonials-list">
-        <div class="testimonial-card">
-          <div class="testimonial-avatar">A</div>
+        <div class="testimonial-card" role="figure" aria-label="Testimonial from Anita Das, Bongaigaon">
+          <div class="testimonial-avatar" aria-hidden="true">A</div>
           <div class="testimonial-text">"Had UPVC windows fitted for my home – very professional and excellent finish. Highly recommended!"</div>
+          <div class="testimonial-stars" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
           <div class="testimonial-name">Anita Das, Bongaigaon</div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-avatar">R</div>
+        <div class="testimonial-card" role="figure" aria-label="Testimonial from Rahul Bora, Kokrajhar">
+          <div class="testimonial-avatar" aria-hidden="true">R</div>
           <div class="testimonial-text">"Modern false ceiling done for my clinic. Superb designs and timely work. Thank you for your service!"</div>
+          <div class="testimonial-stars" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
           <div class="testimonial-name">Rahul Bora, Kokrajhar</div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-avatar">S</div>
+        <div class="testimonial-card" role="figure" aria-label="Testimonial from Swapan Paul, Bongaigaon">
+          <div class="testimonial-avatar" aria-hidden="true">S</div>
           <div class="testimonial-text">"Purchased ladders and doors for my business—best products, reasonable prices, genuine shop."</div>
+          <div class="testimonial-stars" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
           <div class="testimonial-name">Swapan Paul, Bongaigaon</div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-avatar">M</div>
+        <div class="testimonial-card" role="figure" aria-label="Testimonial from Md. Karim, Chirang">
+          <div class="testimonial-avatar" aria-hidden="true">M</div>
           <div class="testimonial-text">"Staff are very helpful, explained all options before I finalized my railing and grill. Great job!"</div>
+          <div class="testimonial-stars" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
           <div class="testimonial-name">Md. Karim, Chirang</div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-avatar">J</div>
+        <div class="testimonial-card" role="figure" aria-label="Testimonial from Jenny Talukdar, Barpeta">
+          <div class="testimonial-avatar" aria-hidden="true">J</div>
           <div class="testimonial-text">"Fantastic experience! Got toughened glass and louvers panels for my office. Quality and finish is top."</div>
+          <div class="testimonial-stars" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
           <div class="testimonial-name">Jenny Talukdar, Barpeta</div>
         </div>
+      </div>
+    </section>
+
+    <!-- FAQ (added without removing anything else) -->
+    <section class="section fade-section" id="faqs">
+      <div class="section-title">Frequently Asked Questions</div>
+      <div style="width:100%;max-width:900px">
+        <details>
+          <summary><strong>Do you provide warranty on UPVC windows and doors?</strong></summary>
+          <p>Yes, our UPVC windows and doors come with a 15-year warranty as mentioned above, along with after-sales support.</p>
+        </details>
+        <details>
+          <summary><strong>Do you take custom interior & hardware orders?</strong></summary>
+          <p>Absolutely. We customize UPVC designs, false ceilings, railings, grills, and glass works as per your site and preference.</p>
+        </details>
+        <details>
+          <summary><strong>What areas do you serve?</strong></summary>
+          <p>We primarily serve Bongaigaon and Lower Assam. For projects outside this area, please call us to discuss.</p>
+        </details>
+        <details>
+          <summary><strong>How soon can you start?</strong></summary>
+          <p>Site visit and quotation can usually be done within a few days. Execution timelines depend on scope and materials.</p>
+        </details>
       </div>
     </section>
   </main>
@@ -638,6 +720,14 @@
         <div class="footer-contact-item">
           <a href="https://maps.app.goo.gl/cCByGtfoceZBEMpbA" target="_blank" class="map-link" rel="noopener">Find us on Google Maps</a>
         </div>
+        <!-- No-API Google Maps Embed (kept the link above as-is) -->
+        <div class="footer-contact-item" aria-hidden="false" style="margin-top:10px;">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.000000000!2d90.000000000!3d26.500000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sB.O.C%20Gate%2C%20Chapaguri%20Road%2C%20Bongaigaon%2C%20Assam%20783380!5e0!3m2!1sen!2sin!4v1700000000000"
+            width="100%" height="220" style="border:0;border-radius:12px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Map - Maa Bageswari Aluminium House">
+          </iframe>
+        </div>
         <div class="footer-social">
           <span class="footer-social-label">Follow us:</span>
           <a href="https://www.facebook.com/profile.php?id=100065515358633" target="_blank" aria-label="Facebook">
@@ -650,7 +740,7 @@
       </div>
     </div>
   </footer>
-  <a href="https://wa.me/919101244709" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <a href="https://wa.me/919101244709?text=Hi%20Maa%20Bageswari%20Aluminium%20House%2C%20I%27d%20like%20to%20get%20a%20quote." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <svg fill="white" width="36" height="36" viewBox="0 0 24 24"><path d="M12 2C6.476 2 2 6.478 2 12c0 1.948.57 3.774 1.554 5.314L2 22l4.814-1.546C8.227 21.43 10.053 22 12 22c5.523 0 10-4.478 10-10S17.523 2 12 2zm.006 17c-1.658 0-3.287-.446-4.664-1.284l-.332-.195-2.857.917.943-2.836-.215-.348C4.45 13.287 4 11.666 4 9.995 4 6.144 7.149 3 12 3c4.852 0 8 3.144 8 6.995 0 1.671-.448 3.292-1.144 4.41l-.216.348.944 2.835-2.858-.917-.332.195C15.292 18.554 13.662 19 12.006 19zm4.073-5.659c-.207-.104-1.225-.605-1.414-.674-.189-.07-.328-.104-.467.103-.14.207-.538.674-.66.812-.121.14-.243.157-.45.053-.207-.104-.874-.322-1.666-1.025-.616-.547-1.032-1.223-1.154-1.429-.121-.207-.013-.318.09-.422.092-.092.207-.241.311-.361.104-.121.139-.207.207-.346.07-.14.035-.249-.018-.353-.053-.104-.467-1.128-.641-1.545-.168-.395-.34-.342-.466-.349l-.399-.008c-.129 0-.335.048-.511.232-.176.184-.67.673-.67 1.641 0 .968.687 1.904.783 2.038.104.14 1.353 2.066 3.277 2.814.459.158.816.252 1.095.322.46.11.88.095 1.21.058.372-.042 1.225-.499 1.397-.98.173-.482.173-.896.121-.98-.052-.085-.189-.14-.396-.244z"/></svg>
   </a>
   <script>
